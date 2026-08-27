@@ -20,6 +20,7 @@ import {
   Bookmark, Loader2, Library, Globe, Mail, Lock, User as UserIcon, LogOut,
   SlidersHorizontal, Sparkles, Trash2, ShoppingBag, ExternalLink, Pencil, Star,
 } from "lucide-react";
+import { useUser, useClerk, SignIn, SignUp } from "@clerk/clerk-react";
 
 /* ------------------------------------------------------------------ *
  * MOCK DATA
@@ -4207,12 +4208,30 @@ export default function App() {
   const [screen, setScreen] = useState("landing"); // landing | auth | app
   const [authMode, setAuthMode] = useState("signup");
   const [tab, setTab] = useState("home");
-  const [account, setAccount] = useState({ username: "kenji.reads", email: "kenji@example.com", country: "Australia" });
+  const [account, setAccount] = useState({ username: "hondana", email: "hondana@example.com", country: "Australia" });
   const [profile, setProfile] = useState({
     avatarColor: AVATAR_COLORS[0],     bio: "Slowly closing the gaps. Vinland Saga is the one I'd save from a fire.",
     favourites: ["vinland", "monster", "witch", "frieren"],
     favouriteVolume: { id: "vinland", vol: 22 },
   });
+  const { user, isSignedIn } = useUser();
+  const { signOut } = useClerk();
+
+    useEffect(() => {
+    if (isSignedIn && user) {
+      setAccount((a) => ({
+        ...a,
+        username: user.username || user.firstName || a.username,
+        email: user.primaryEmailAddress?.emailAddress || a.email,
+      }));
+      setScreen("app");
+      setTab("home");
+    } else if (isSignedIn === false && screen === "app") {
+      // Clerk has confirmed you're signed out, but the app still thinks
+      // you're in — send it back to the landing page.
+      setScreen("landing");
+    }
+  }, [isSignedIn, user, screen]);
   const [collection, setCollection] = useState(() => buildCollection(MY_COLLECTION));
   const [following, setFollowing] = useState(["f1", "f2", "f3"]);
   const [followers, setFollowers] = useState(["f1", "f6", "f7", "f10"]);
@@ -4421,7 +4440,7 @@ export default function App() {
   const openEntry = openId ? entryOf(activeCollection, openId) : EMPTY_ENTRY;
   const country = account.country || "Australia";
 
-  if (screen !== "app") {
+    if (screen !== "app") {
     return (
       <div className="hd-root" data-theme={theme} style={{ minHeight: "100vh" }}>
         <Styles />
@@ -4430,10 +4449,11 @@ export default function App() {
             onStart={() => { setAuthMode("signup"); setScreen("auth"); }}
             onSignIn={() => { setAuthMode("login"); setScreen("auth"); }} />
         ) : (
-          <AuthScreen mode={authMode} setMode={setAuthMode} theme={theme} setTheme={setTheme}
-            account={account} setAccount={setAccount}
-            onBack={() => setScreen("landing")}
-            onDone={() => { setScreen("app"); setTab("home"); notify(`Welcome, ${account.username || "reader"}`); }} />
+          <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
+            {authMode === "signup"
+              ? <SignUp routing="virtual" signInUrl="#" afterSignUpUrl="/" />
+              : <SignIn routing="virtual" signUpUrl="#" afterSignInUrl="/" />}
+          </div>
         )}
         {toast && <div className="hd-toast" key={toast.key}>{toast.msg}</div>}
       </div>
@@ -4486,7 +4506,7 @@ export default function App() {
                 <button onClick={() => goTab("people:followers")}><Users size={15} /> Followers</button>
                 <button onClick={() => goTab("premium")}><Crown size={15} /> {plan === "premium" ? "Premium" : `Premium · ${planFor(country).monthlyLabel}/mo`}</button>
                 <button onClick={() => goTab("settings")}><SettingsIcon size={15} /> Settings</button>
-                <button onClick={() => { setMenuOpen(false); setScreen("landing"); setVisiting(null); }}><LogOut size={15} /> Sign out</button>
+                <button onClick={() => { setMenuOpen(false); setVisiting(null); signOut(); }}><LogOut size={15} /> Sign out</button>
               </div>
             )}
           </div>
@@ -4576,7 +4596,7 @@ export default function App() {
             theme={theme} setTheme={setTheme}
             plan={plan} renew={billing.renew} periodEnd={billing.periodEnd}
             onPremium={() => goTab("premium")} onExport={() => setExportOpen(true)}
-            notify={notify} onTab={goTab} onSignOut={() => { setScreen("landing"); setVisiting(null); }} />
+            notify={notify} onTab={goTab} onSignOut={() => { setVisiting(null); signOut(); }} />
         )}
       </main>
 
