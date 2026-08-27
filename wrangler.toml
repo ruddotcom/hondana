@@ -5,17 +5,18 @@ pages_build_output_dir = "dist"
 # Create the database first:  npx wrangler d1 create hondana
 # then paste the id it prints here.
 
-# [[d1_databases]]
-# binding = "DB"
-# database_name = "hondana"
-# database_id = "PASTE_YOUR_D1_ID_HERE"
+[[d1_databases]]
+binding = "DB"
+database_name = "hondana"
+database_id = "29870170-84c9-4683-beda-a5c3182768f1"
 
-# [[r2_buckets]]
-# binding = "COVERS"
-# bucket_name = "hondana-covers"
+[[r2_buckets]]
+binding = "COVERS"
+bucket_name = "hondana-covers"
 
 [vars]
-APP_URL = "https://hondana.pages.dev"
+VITE_SITE_URL = "https://trackhondana.pages.dev"
+VITE_CLERK_PUBLISHABLE_KEY = "pk_test_your_key_here"
 
 # Secrets are NOT set here. Use:
 #   npx wrangler pages secret put STRIPE_SECRET_KEY
