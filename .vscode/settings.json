@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": false,
+  "files.eol": "\n",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/covers": true,
+    "**/.ingest-cache.json": true
+  },
+  "files.associations": { "*.jsx": "javascriptreact" }
+}

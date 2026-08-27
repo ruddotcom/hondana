@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Run honDana", "type": "npm", "script": "dev", "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }, "isBackground": true },
+    { "label": "Build for production", "type": "npm", "script": "build", "problemMatcher": [] },
+    { "label": "Catalogue: fetch covers", "type": "npm", "script": "ingest", "problemMatcher": [] },
+    { "label": "Catalogue: find new volumes", "type": "npm", "script": "ingest:new", "problemMatcher": [] },
+    { "label": "Catalogue: upload covers", "type": "npm", "script": "covers:publish", "problemMatcher": [] }
+  ]
+}

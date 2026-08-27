@@ -1,0 +1,116 @@
+# Put this at .github/workflows/update-catalogue.yml
+#
+# Runs itself. Every Monday it looks for volumes that have come out since last
+# week; on the 1st of the month it also goes looking for series that aren't in
+# the catalogue at all. New covers are resized and pushed to R2, and the
+# catalogue is committed back to the repo — which redeploys the site.
+#
+# Nothing here needs a human unless a run fails.
+#
+# Repo secrets (Settings → Secrets and variables → Actions):
+#   GOOGLE_BOOKS_KEY
+#   CLOUDFLARE_ACCOUNT_ID
+#   CLOUDFLARE_API_TOKEN     (Workers R2 Storage: Edit)
+#   DISCORD_WEBHOOK          (optional — delete the Announce step if unused)
+
+name: Update catalogue
+
+on:
+  schedule:
+    - cron: "0 15 * * 1"      # Mondays 15:00 UTC — Tuesday morning in Melbourne
+    - cron: "0 16 1 * *"      # 1st of the month: discovery run
+  workflow_dispatch:
+    inputs:
+      discover:
+        description: "Also look for new series"
+        type: boolean
+        default: false
+
+concurrency:
+  group: catalogue
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    permissions:
+      contents: write
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Discovery runs on the monthly schedule, or on demand from the Actions tab.
+      - name: Discover new series
+        if: github.event.schedule == '0 16 1 * *' || inputs.discover
+        env:
+          GOOGLE_BOOKS_KEY: ${{ secrets.GOOGLE_BOOKS_KEY }}
+          MIN_POPULARITY: "4000"
+        run: node scripts/ingest-covers.mjs --discover 6
+
+      - name: Look for new volumes
+        env:
+          GOOGLE_BOOKS_KEY: ${{ secrets.GOOGLE_BOOKS_KEY }}
+        run: node scripts/ingest-covers.mjs --check-new
+
+      - name: Publish new covers to R2
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          R2_BUCKET: hondana-covers
+        run: |
+          npm install sharp --no-save
+          node scripts/publish-covers.mjs
+
+      - name: Commit the catalogue
+        id: commit
+        run: |
+          git config user.name  "honDana bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add volumes.json series.json new-volumes.json .ingest-cache.json .published.json
+          if git diff --staged --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Nothing changed."
+          else
+            COUNT=$(node -e "console.log(require('./new-volumes.json').length)")
+            SERIES=$(node -e "console.log(require('./series.json').length)")
+            git commit -m "catalogue: $COUNT new volume(s), $SERIES series"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Optional: a message when something actually lands.
+      - name: Announce
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          HOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "No webhook set, skipping."; exit 0; fi
+          BODY=$(node -e "
+            const v = require('./new-volumes.json');
+            if (!v.length) { console.log(''); process.exit(0); }
+            console.log(v.slice(0, 20).map(x =>
+              '- ' + x.series + (x.edition !== 'Standard' ? ' (' + x.edition + ')' : '') + ' vol. ' + x.volume
+            ).join('\n'));
+          ")
+          if [ -n "$BODY" ]; then
+            curl -sS -X POST "$HOOK" -H 'Content-Type: application/json' \
+              -d "$(node -e "console.log(JSON.stringify({ content: 'New in the catalogue:\n' + process.argv[1] }))" "$BODY")"
+          fi
+
+      # If a run fails, open an issue so it can't fail silently for months.
+      - name: Flag a failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Catalogue update failed — ${new Date().toISOString().slice(0, 10)}`,
+              body: `The scheduled catalogue job failed.\n\n[See the run](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`,
+            });
