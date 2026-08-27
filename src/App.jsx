@@ -4449,10 +4449,20 @@ export default function App() {
             onStart={() => { setAuthMode("signup"); setScreen("auth"); }}
             onSignIn={() => { setAuthMode("login"); setScreen("auth"); }} />
         ) : (
-          <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
+                    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 24, gap: 16 }}>
             {authMode === "signup"
               ? <SignUp routing="virtual" signInUrl="#" afterSignUpUrl="/" />
               : <SignIn routing="virtual" signUpUrl="#" afterSignInUrl="/" />}
+            <button onClick={() => setAuthMode(authMode === "signup" ? "login" : "signup")}
+              style={{ background: "none", border: "none", cursor: "pointer", color: "var(--accent, #C2542A)",
+                fontSize: 14, fontFamily: "Inter, sans-serif" }}>
+              {authMode === "signup" ? "Already have an account? Sign in" : "Don't have an account? Sign up"}
+            </button>
+            <button onClick={() => setScreen("landing")}
+              style={{ background: "none", border: "none", cursor: "pointer", color: "var(--ink2, #6A6153)",
+                fontSize: 13, fontFamily: "Inter, sans-serif" }}>
+              ← Back
+            </button>
           </div>
         )}
         {toast && <div className="hd-toast" key={toast.key}>{toast.msg}</div>}
