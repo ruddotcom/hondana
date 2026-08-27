@@ -4,14 +4,15 @@ pages_build_output_dir = "dist"
 
 # Create the database first:  npx wrangler d1 create hondana
 # then paste the id it prints here.
-[[d1_databases]]
-binding = "DB"
-database_name = "hondana"
-database_id = "PASTE_YOUR_D1_ID_HERE"
 
-[[r2_buckets]]
-binding = "COVERS"
-bucket_name = "hondana-covers"
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "hondana"
+# database_id = "PASTE_YOUR_D1_ID_HERE"
+
+# [[r2_buckets]]
+# binding = "COVERS"
+# bucket_name = "hondana-covers"
 
 [vars]
 APP_URL = "https://hondana.pages.dev"
