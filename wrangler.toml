@@ -16,7 +16,7 @@ bucket_name = "hondana-covers"
 
 [vars]
 VITE_SITE_URL = "https://trackhondana.pages.dev"
-VITE_CLERK_PUBLISHABLE_KEY = "pk_test_your_key_here"
+VITE_CLERK_PUBLISHABLE_KEY = "pk_test_dG91Y2hpbmctc2FsbW9uLTk0NDQuY2xlcmsuYWNjb3VudHMuZGV2JA"
 
 # Secrets are NOT set here. Use:
 #   npx wrangler pages secret put STRIPE_SECRET_KEY
