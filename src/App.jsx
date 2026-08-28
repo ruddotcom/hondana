@@ -36,12 +36,12 @@ import { useUser, useClerk, useAuth, SignIn, SignUp } from "@clerk/clerk-react";
  * ------------------------------------------------------------------ */
 
 const SERIES = [
-  { id: "jjk", title: "Jujutsu Kaisen", jp: "呪術廻戦", author: "Gege Akutami", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Supernatural", "Dark Fantasy"], volumes: 30, enVols: 30, status: "Completed", year: 2018, color: "#3B4A5E", blurb: "A high-schooler swallows a cursed finger and enrols in a secret school for sorcerers who exorcise the curses born from human fear.", next: null },
-  { id: "mha", title: "My Hero Academia", jp: "僕のヒーローアカデミア", author: "Kohei Horikoshi", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Adventure", "Superhero"], volumes: 42, enVols: 42, status: "Completed", year: 2014, color: "#8A5C39", blurb: "In a world where nearly everyone has a superpower, a boy born with none is handed the greatest one of all.", next: null },
-  { id: "csm", title: "Chainsaw Man", jp: "チェンソーマン", author: "Tatsuki Fujimoto", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Horror", "Comedy"], volumes: 24, enVols: 21, status: "Completed", year: 2018, ended: "March 2026", color: "#9D4636", blurb: "A devil-hunting teenager in debt to the yakuza fuses with his chainsaw dog and gets drafted into public safety. The serialisation closed in March 2026 at 24 volumes.", next: null },
-  { id: "vinland", title: "Vinland Saga", jp: "ヴィンランド・サガ", author: "Makoto Yukimura", publisher: "Kodansha", en: "Kodansha USA", genres: ["Historical", "Drama", "Action"], volumes: 28, enVols: 26, status: "Ongoing", year: 2005, color: "#4C6150", blurb: "A young Viking chases revenge across eleventh-century Europe, then spends the rest of his life trying to put down the sword.", next: { num: 29, date: "12 Sep 2026" } },
+  { id: "jjk", title: "Jujutsu Kaisen", jp: "呪術廻戦", author: "Gege Akutami", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Supernatural", "Dark Fantasy"], volumes: 30, enVols: 30, status: "Completed", year: 2018, color: "#3B4A5E", blurb: "Yuji Itadori, a high schooler with unusual physical strength, swallows the finger of a powerful Curse named Ryomen Sukuna to protect his friends — and is drawn into the deadly world of Jujutsu sorcerers tasked with exorcising Curses that feed on humanity.", next: null },
+  { id: "mha", title: "My Hero Academia", jp: "僕のヒーローアカデミア", author: "Kohei Horikoshi", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Adventure", "Superhero"], volumes: 42, enVols: 42, status: "Completed", year: 2014, color: "#8A5C39", blurb: "Izuku Midoriya is born without a Quirk in a world where nearly everyone has one. After a chance encounter with the greatest hero, All Might, he inherits a powerful ability and enrols at U.A. High School to train as a professional hero.", next: null },
+  { id: "csm", title: "Chainsaw Man", jp: "チェンソーマン", author: "Tatsuki Fujimoto", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Horror", "Comedy"], volumes: 24, enVols: 21, status: "Completed", year: 2018, ended: "March 2026", color: "#9D4636", blurb: "Denji, a dirt-poor young man living with his Chainsaw Devil pet Pochita, merges with him after a betrayal and becomes the Chainsaw Man — then gets recruited by a government agency that hunts Devils threatening humanity.", next: null },
+  { id: "vinland", title: "Vinland Saga", jp: "ヴィンランド・サガ", author: "Makoto Yukimura", publisher: "Kodansha", en: "Kodansha USA", genres: ["Historical", "Drama", "Action"], volumes: 28, enVols: 26, status: "Ongoing", year: 2005, color: "#4C6150", blurb: "Young Thorfinn grows up on the battlefields of eleventh-century Europe, driven by a thirst for vengeance against his father's killer. As the years pass, he begins searching for a land beyond war — the fabled Vinland.", next: { num: 29, date: "12 Sep 2026" } },
   { id: "bluep", title: "Blue Period", jp: "ブルーピリオド", author: "Tsubasa Yamaguchi", publisher: "Kodansha", en: "Kodansha USA", genres: ["Drama", "Slice of Life"], volumes: 17, enVols: 15, status: "Ongoing", year: 2017, color: "#42557B", blurb: "A high-achieving delinquent falls for oil painting at seventeen and sets himself at Japan's hardest art school.", next: { num: 18, date: "3 Oct 2026" } },
-  { id: "monster", title: "Monster", jp: "モンスター", author: "Naoki Urasawa", publisher: "Shogakukan", en: "Viz Media", genres: ["Crime", "Thriller", "Drama"], volumes: 18, enVols: 18, status: "Completed", year: 1994, color: "#5A4A56", blurb: "A brilliant surgeon saves a boy's life, then spends a decade across Germany hunting the man that boy became.", next: null },
+  { id: "monster", title: "Monster", jp: "モンスター", author: "Naoki Urasawa", publisher: "Shogakukan", en: "Viz Media", genres: ["Crime", "Thriller", "Drama"], volumes: 18, enVols: 18, status: "Completed", year: 1994, color: "#5A4A56", blurb: "Dr. Kenzo Tenma, a brilliant Japanese surgeon living in Germany, saves a young boy's life over a politician's. Years later he discovers the boy has grown into a serial killer, and sets out across Europe to stop him.", next: null },
   { id: "witch", title: "Witch Hat Atelier", jp: "とんがり帽子のアトリエ", author: "Kamome Shirahama", publisher: "Kodansha", en: "Kodansha USA", genres: ["Fantasy", "Adventure"], volumes: 13, enVols: 12, status: "Ongoing", year: 2016, color: "#625589", blurb: "Magic is drawn, not spoken — and a girl who was never meant to hold a pen is taken in by a reclusive witch.", next: { num: 14, date: "24 Sep 2026" } },
   { id: "kaguya", title: "Kaguya-sama: Love Is War", jp: "かぐや様は告らせたい", author: "Aka Akasaka", publisher: "Shueisha", en: "Viz Media", genres: ["Romance", "Comedy"], volumes: 28, enVols: 28, status: "Completed", year: 2015, color: "#95606D", blurb: "Two student council prodigies are hopelessly in love and would each rather die than confess first.", next: null },
   { id: "dungeon", title: "Delicious in Dungeon", jp: "ダンジョン飯", author: "Ryoko Kui", publisher: "Kadokawa", en: "Yen Press", genres: ["Fantasy", "Comedy", "Adventure"], volumes: 14, enVols: 14, status: "Completed", year: 2014, color: "#86682F", blurb: "A broke adventuring party descends to rescue their swallowed swordswoman, eating every monster they meet on the way down.", next: null },
@@ -49,10 +49,10 @@ const SERIES = [
   { id: "yotsuba", title: "Yotsuba&!", jp: "よつばと！", author: "Kiyohiko Azuma", publisher: "Kadokawa", en: "Yen Press", genres: ["Comedy", "Slice of Life"], volumes: 16, enVols: 15, status: "Ongoing", year: 2003, color: "#78864A", blurb: "A very small green-haired girl discovers doorbells, cicadas, air conditioning and the ocean, in roughly that order.", next: { num: 17, date: "5 Dec 2026" } },
   { id: "koe", title: "A Silent Voice", jp: "聲の形", author: "Yoshitoki Ōima", publisher: "Kodansha", en: "Kodansha USA", genres: ["Drama", "Romance"], volumes: 7, enVols: 7, status: "Completed", year: 2013, color: "#6A7A86", blurb: "The boy who bullied a deaf classmate out of school finds her again six years later, and tries to learn her language.", next: null },
 
-  { id: "berserk", title: "Berserk", jp: "ベルセルク", author: "Kentaro Miura", publisher: "Hakusensha", en: "Dark Horse", genres: ["Dark Fantasy", "Action", "Horror"], volumes: 43, enVols: 42, status: "Ongoing", year: 1989, color: "#463D35", blurb: "A branded mercenary carries an impossible sword across a world that has already decided how his story ends.", next: { num: 44, date: "27 Oct 2026" } },
+  { id: "berserk", title: "Berserk", jp: "ベルセルク", author: "Kentaro Miura", publisher: "Hakusensha", en: "Dark Horse", genres: ["Dark Fantasy", "Action", "Horror"], volumes: 43, enVols: 42, status: "Ongoing", year: 1989, color: "#463D35", blurb: "Guts, a lone mercenary branded with a mark that attracts demons, wields an enormous sword as he battles his way through a dark medieval world — driven by rage against his former comrade Griffith, who sacrificed their companions for godhood.", next: { num: 44, date: "27 Oct 2026" } },
   { id: "lotl", title: "Land of the Lustrous", jp: "宝石の国", author: "Haruko Ichikawa", publisher: "Kodansha", en: "Kodansha USA", genres: ["Fantasy", "Sci-Fi", "Drama"], volumes: 13, enVols: 13, status: "Completed", year: 2012, color: "#51707E", blurb: "Immortal gem people defend their shore from moon-dwellers who want to grind them into ornaments.", next: null },
   { id: "punpun", title: "Goodnight Punpun", jp: "おやすみプンプン", author: "Inio Asano", publisher: "Shogakukan", en: "Viz Media", genres: ["Drama", "Psychological"], volumes: 7, enVols: 7, status: "Completed", year: 2007, color: "#5C6757", blurb: "A boy drawn as a small bird grows up in a Japan that keeps not ending. Collected in seven two-in-one volumes.", next: null },
-  { id: "spy", title: "Spy × Family", jp: "スパイファミリー", author: "Tatsuya Endo", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Comedy", "Slice of Life"], volumes: 15, enVols: 13, status: "Ongoing", year: 2019, color: "#86606E", blurb: "A spy, an assassin and a telepath build a fake family, and each of them is the only one who doesn't know.", next: { num: 16, date: "4 Sep 2026" } },
+  { id: "spy", title: "Spy × Family", jp: "スパイファミリー", author: "Tatsuya Endo", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Comedy", "Slice of Life"], volumes: 15, enVols: 13, status: "Ongoing", year: 2019, color: "#86606E", blurb: "Master spy Twilight must build a fake family to infiltrate a target — but his adopted daughter can read minds and his wife is a secret assassin, and none of them know the others' true identities.", next: { num: 16, date: "4 Sep 2026" } },
   { id: "oshi", title: "Oshi no Ko", jp: "推しの子", author: "Aka Akasaka", publisher: "Shueisha", en: "Yen Press", genres: ["Drama", "Psychological", "Mystery"], volumes: 16, enVols: 15, status: "Completed", year: 2020, color: "#755477", blurb: "A doctor is reborn as the son of the idol he adored, and grows up inside the industry that killed her.", next: null },
   { id: "dandadan", title: "Dandadan", jp: "ダンダダン", author: "Yukinobu Tatsu", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Comedy", "Supernatural"], volumes: 19, enVols: 16, status: "Ongoing", year: 2021, color: "#4B6688", blurb: "She believes in aliens, he believes in ghosts, and they are both about to be extremely correct.", next: { num: 20, date: "20 Oct 2026" } },
   { id: "bluelock", title: "Blue Lock", jp: "ブルーロック", author: "Muneyuki Kaneshiro", publisher: "Kodansha", en: "Kodansha USA", genres: ["Sports", "Drama", "Action"], volumes: 32, enVols: 27, status: "Ongoing", year: 2018, color: "#3D5867", blurb: "Japan locks up three hundred strikers in a facility to manufacture one perfect egoist.", next: { num: 33, date: "9 Sep 2026" } },
@@ -61,7 +61,7 @@ const SERIES = [
   { id: "sakamoto", title: "Sakamoto Days", jp: "サカモトデイズ", author: "Yuto Suzuki", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Comedy"], volumes: 22, enVols: 19, status: "Ongoing", year: 2020, color: "#4A6353", blurb: "The greatest hitman alive retired to run a corner shop, and the profession would like a word.", next: { num: 23, date: "1 Dec 2026" } },
 
   { id: "vagabond", title: "Vagabond", jp: "バガボンド", author: "Takehiko Inoue", publisher: "Kodansha", en: "Viz Media", genres: ["Historical", "Drama", "Action"], volumes: 37, enVols: 37, status: "On hiatus", year: 1998, color: "#6B5B45", blurb: "Miyamoto Musashi walks out of a losing battle and spends the rest of his life trying to work out what strength is for.", next: null },
-  { id: "souleater", title: "Soul Eater", jp: "ソウルイーター", author: "Atsushi Ōkubo", publisher: "Square Enix", en: "Yen Press", genres: ["Action", "Comedy", "Supernatural"], volumes: 25, enVols: 25, status: "Completed", year: 2004, color: "#4A4560", blurb: "Students at a school for weapon-meisters hunt corrupted souls under a moon that will not stop grinning.", next: null },
+  { id: "souleater", title: "Soul Eater", jp: "ソウルイーター", author: "Atsushi Ōkubo", publisher: "Square Enix", en: "Yen Press", genres: ["Action", "Comedy", "Supernatural"], volumes: 25, enVols: 25, status: "Completed", year: 2004, color: "#4A4560", blurb: "At Death Weapon Meister Academy, students who can transform into weapons are paired with meisters. Together they must collect the souls of 99 evil humans and one witch to create a Death Scythe worthy of the Grim Reaper himself.", next: null },
 
   // ---- collected editions: same work, different physical product, its own
   // ISBNs and its own run on the shelf. `work` links them together. ----
@@ -81,20 +81,20 @@ const SERIES = [
     volumes, enVols, status, year, colour, blurb]. In production this table is
     generated by ingest-covers.mjs rather than hand-written. */
 const EXTRA = [
-  ["onepiece", null, null, null, "One Piece", "ワンピース", "Eiichiro Oda", "Shueisha", "Viz Media", "Action|Adventure|Comedy", 110, 108, "Ongoing", 1997, "#B4703A", "A boy of rubber sails for the crown of the pirates. The longest run on anyone's shelf."],
+  ["onepiece", null, null, null, "One Piece", "ワンピース", "Eiichiro Oda", "Shueisha", "Viz Media", "Action|Adventure|Comedy", 115, 112, "Ongoing", 1997, "#B4703A", "Monkey D. Luffy and his crew sail the Grand Line in search of the legendary treasure, the One Piece, to become King of the Pirates.", [113]],
   ["onepiece-omni", "onepiece", "3-in-1 Omnibus", "3-in-1", "One Piece", "ワンピース", "Eiichiro Oda", "Shueisha", "Viz Media", "Action|Adventure|Comedy", 34, 34, "Ongoing", 2009, "#A5622F", "Three volumes a book. The only sane way to start 110 volumes late."],
   ["naruto", null, null, null, "Naruto", "ナルト", "Masashi Kishimoto", "Shueisha", "Viz Media", "Action|Adventure", 72, 72, "Completed", 1999, "#B96A34", "An outcast ninja with a fox sealed inside him wants the village's top job."],
   ["naruto-omni", "naruto", "3-in-1 Omnibus", "3-in-1", "Naruto", "ナルト", "Masashi Kishimoto", "Shueisha", "Viz Media", "Action|Adventure", 24, 24, "Completed", 2011, "#A85E2C", "Twenty-four books instead of seventy-two, at roughly half the price."],
   ["bleach", null, null, null, "Bleach", "ブリーチ", "Tite Kubo", "Shueisha", "Viz Media", "Action|Supernatural", 74, 74, "Completed", 2001, "#5B6675", "A teenager who sees ghosts inherits a soul reaper's sword and her whole job."],
   ["bleach-omni", "bleach", "3-in-1 Omnibus", "3-in-1", "Bleach", "ブリーチ", "Tite Kubo", "Shueisha", "Viz Media", "Action|Supernatural", 25, 25, "Completed", 2011, "#4F5A69", "The Soul Society arc in eight books rather than twenty-four."],
-  ["dragonball", null, null, null, "Dragon Ball", "ドラゴンボール", "Akira Toriyama", "Shueisha", "Viz Media", "Action|Adventure|Comedy", 42, 42, "Completed", 1984, "#C08A32", "The one everything else is downstream of."],
+  ["dragonball", null, null, null, "Dragon Ball", "ドラゴンボール", "Akira Toriyama", "Shueisha", "Viz Media", "Action|Adventure|Comedy", 42, 42, "Completed", 1984, "#C08A32", "Son Goku trains in martial arts from childhood through adulthood, defending Earth against increasingly powerful enemies while searching for the seven Dragon Balls."],
   ["dragonball-fc", "dragonball", "Full Color Edition", "Full colour", "Dragon Ball", "ドラゴンボール", "Akira Toriyama", "Shueisha", "Viz Media", "Action|Adventure|Comedy", 20, 20, "Ongoing", 2013, "#C99A3C", "Every page recoloured, arc by arc. Expensive and worth it."],
-  ["deathnote", null, null, null, "Death Note", "デスノート", "Tsugumi Ohba", "Shueisha", "Viz Media", "Mystery|Psychological|Thriller", 12, 12, "Completed", 2003, "#3A3742", "A notebook that kills, and the two smartest people alive circling it."],
+  ["deathnote", null, null, null, "Death Note", "デスノート", "Tsugumi Ohba", "Shueisha", "Viz Media", "Mystery|Psychological|Thriller", 12, 12, "Completed", 2003, "#3A3742", "High school genius Light Yagami finds a supernatural notebook that kills anyone whose name is written in it. He begins a crusade to rid the world of criminals, but the enigmatic detective L is determined to unmask him."],
   ["deathnote-black", "deathnote", "Black Edition", "2-in-1", "Death Note", "デスノート", "Tsugumi Ohba", "Shueisha", "Viz Media", "Mystery|Psychological|Thriller", 6, 6, "Completed", 2010, "#2D2A34", "Two volumes a book, black-edged pages, matte covers."],
   ["deathnote-aio", "deathnote", "All-in-One Edition", "Omnibus brick", "Death Note", "デスノート", "Tsugumi Ohba", "Shueisha", "Viz Media", "Mystery|Psychological|Thriller", 1, 1, "Completed", 2011, "#26232C", "The entire series in one 2,400-page brick."],
-  ["fma", null, null, null, "Fullmetal Alchemist", "鋼の錬金術師", "Hiromu Arakawa", "Square Enix", "Viz Media", "Action|Adventure|Fantasy", 27, 27, "Completed", 2001, "#8A6A44", "Two brothers pay for a resurrection with a body and an arm."],
+  ["fma", null, null, null, "Fullmetal Alchemist", "鋼の錬金術師", "Hiromu Arakawa", "Square Enix", "Viz Media", "Action|Adventure|Fantasy", 27, 27, "Completed", 2001, "#8A6A44", "Brothers Edward and Alphonse Elric attempt forbidden alchemy to resurrect their mother, and pay a terrible price — Ed loses limbs, Al loses his entire body. They search for the Philosopher's Stone to restore what they've lost."],
   ["fma-fullmetal", "fma", "Fullmetal Edition", "Hardcover 2-in-1", "Fullmetal Alchemist", "鋼の錬金術師", "Hiromu Arakawa", "Square Enix", "Viz Media", "Action|Adventure|Fantasy", 20, 20, "Completed", 2018, "#7C5C38", "Oversized hardcovers with restored colour pages and new jackets."],
-  ["aot", null, null, null, "Attack on Titan", "進撃の巨人", "Hajime Isayama", "Kodansha", "Kodansha USA", "Action|Dark Fantasy|Drama", 34, 34, "Completed", 2009, "#6B6350", "Humanity behind three walls, and the things outside them."],
+  ["aot", null, null, null, "Attack on Titan", "進撃の巨人", "Hajime Isayama", "Kodansha", "Kodansha USA", "Action|Dark Fantasy|Drama", 34, 34, "Completed", 2009, "#6B6350", "After Titans breach the walls protecting the last remnants of humanity, young Eren Jaeger vows to exterminate them all. As he joins the military, he discovers the truth about the Titans is far more complex than anyone imagined."],
   ["aot-colossal", "aot", "Colossal Edition", "5-in-1", "Attack on Titan", "進撃の巨人", "Hajime Isayama", "Kodansha", "Kodansha USA", "Action|Dark Fantasy|Drama", 7, 7, "Completed", 2014, "#5C5647", "Five volumes a book. Heavy enough to be a doorstop."],
   ["sailormoon", null, null, null, "Sailor Moon", "美少女戦士セーラームーン", "Naoko Takeuchi", "Kodansha", "Kodansha USA", "Fantasy|Romance|Action", 12, 12, "Completed", 1991, "#9A6484", "The blueprint for every magical girl series since."],
   ["sailormoon-eternal", "sailormoon", "Eternal Edition", "Oversized", "Sailor Moon", "美少女戦士セーラームーン", "Naoko Takeuchi", "Kodansha", "Kodansha USA", "Fantasy|Romance|Action", 10, 10, "Completed", 2018, "#8D5A79", "Larger trim, foil covers, colour pages restored."],
@@ -114,6 +114,8 @@ const EXTRA = [
   ["kenshin-omni", "kenshin", "3-in-1 Omnibus", "3-in-1", "Rurouni Kenshin", "るろうに剣心", "Nobuhiro Watsuki", "Shueisha", "Viz Media", "Historical|Action|Drama", 9, 9, "Completed", 2017, "#7D474E", "The whole series in nine books."],
   ["inuyasha", null, null, null, "Inuyasha", "犬夜叉", "Rumiko Takahashi", "Shogakukan", "Viz Media", "Fantasy|Adventure|Romance", 56, 56, "Completed", 1996, "#6A7A88", "A schoolgirl falls down a well into the Sengoku era."],
   ["inuyasha-vizbig", "inuyasha", "VIZBIG Edition", "3-in-1", "Inuyasha", "犬夜叉", "Rumiko Takahashi", "Shogakukan", "Viz Media", "Fantasy|Adventure|Romance", 19, 19, "Completed", 2009, "#5F6E7B", "Nineteen large-format books, colour pages included."],
+  ["kagurabachi", null, null, null, "Kagurabachi", "カグラバチ", "Takeru Hokazono", "Shueisha", "Viz Media", "Action|Fantasy", 12, 8, "Ongoing", 2023, "#4A3D5E", "After his swordsmith father is murdered for the enchanted blades he forged, Chihiro Rokuhira takes up one of the swords to hunt down the killers.", [9, 10]],
+  ["mamayuyu", null, "Japanese Import", null, "MamaYuyu", "魔々勇々", "Yoshihiko Hayashi", "Shueisha", "Viz Media", "Action|Fantasy", 4, 0, "Completed", 2023, "#6B4A72", "In a world at peace between hero and demon lord, the hero Corleo is confronted by invaders from another world who shatter the fragile harmony."],
   ["hxh", null, null, null, "Hunter × Hunter", "ハンター×ハンター", "Yoshihiro Togashi", "Shueisha", "Viz Media", "Action|Adventure|Fantasy", 38, 38, "On hiatus", 1998, "#4C7360", "A boy hunts for his father through the most elaborate rule-set in shonen."],
   ["pluto", null, null, null, "Pluto", "プルートウ", "Naoki Urasawa", "Shogakukan", "Viz Media", "Sci-Fi|Mystery|Drama", 8, 8, "Completed", 2003, "#4A5566", "Urasawa retells Tezuka's Astro Boy as a murder investigation."],
   ["uzumaki", null, null, null, "Uzumaki", "うずまき", "Junji Ito", "Shogakukan", "Viz Media", "Horror|Mystery", 3, 3, "Completed", 1998, "#57545C", "A town infected by the shape of a spiral."],
@@ -123,15 +125,18 @@ const EXTRA = [
   ["c20th-perfect", "c20th", "Perfect Edition", "2-in-1", "20th Century Boys", "20世紀少年", "Naoki Urasawa", "Shogakukan", "Viz Media", "Mystery|Sci-Fi|Thriller", 11, 11, "Completed", 2018, "#5E5142", "Eleven books, including the 21st Century Boys coda."],
   ["ccs", null, null, null, "Cardcaptor Sakura", "カードキャプターさくら", "CLAMP", "Kodansha", "Kodansha USA", "Fantasy|Romance|Comedy", 12, 12, "Completed", 1996, "#8E6A84", "A girl scatters a deck of magic cards and has to fetch them all back."],
   ["ccs-collectors", "ccs", "Collector's Edition", "Hardcover", "Cardcaptor Sakura", "カードキャプターさくら", "CLAMP", "Kodansha", "Kodansha USA", "Fantasy|Romance|Comedy", 9, 9, "Completed", 2019, "#815E77", "Hardcover, larger, with all the colour art CLAMP drew for it."],
-  ["nana", null, null, null, "Nana", "ナナ", "Ai Yazawa", "Shueisha", "Viz Media", "Romance|Drama|Music", 21, 21, "On hiatus", 2000, "#8E4A5E", "Two women called Nana share a Tokyo flat and ruin each other's lives beautifully."],
+  ["nana", null, null, null, "Nana", "ナナ", "Ai Yazawa", "Shueisha", "Viz Media", "Romance|Drama|Music", 21, 21, "On hiatus", 2000, "#8E4A5E", "Two young women named Nana — one a punk vocalist chasing stardom, the other a small-town girl chasing love — share an apartment in Tokyo as their lives become deeply intertwined."],
   ["kimi", null, null, null, "Kimi ni Todoke", "君に届け", "Karuho Shiina", "Shueisha", "Viz Media", "Romance|Drama|Slice of Life", 30, 30, "Completed", 2005, "#A46A80", "A girl everyone mistakes for a ghost story is befriended by the most popular boy in school."],
+  ["vagabond-definitive", "vagabond", "Definitive Edition", "Hardcover", "Vagabond", "バガボンド", "Takehiko Inoue", "Kodansha", "Viz Media", "Historical|Drama|Action", 5, 5, "Ongoing", 2025, "#5A4A38", "The newest English release — hardcover volumes, each covering roughly three of the original tankōbon."],
   ["vagabond-perfect", "vagabond", "Definitive Edition", "Kanzenban hardcover", "Vagabond", "バガボンド", "Takehiko Inoue", "Kodansha", "Viz Media", "Historical|Drama|Action", 22, 22, "Completed", 2013, "#8A6A44", "The 完全版 reissue: larger trim, restored colour plates, twenty-two volumes."],
   ["yyh", null, null, null, "Yu Yu Hakusho", "幽遊白書", "Yoshihiro Togashi", "Shueisha", "Viz Media", "Action|Supernatural|Comedy", 19, 19, "Completed", 1990, "#5C6E4E", "A delinquent dies saving a child and gets a job in the afterlife."],
 ];
-SERIES.push(...EXTRA.map(([id, work, edition, format, title, jp, author, publisher, en, genres, volumes, enVols, status, year, color, blurb]) => ({
+SERIES.push(...EXTRA.map(([id, work, edition, format, title, jp, author, publisher, en, genres, volumes, enVols, status, year, color, blurb, preorder]) => ({
   id, work: work || id, edition: edition || "Standard", format: format || null,
   title, jp, author, publisher, en, genres: genres.split("|"),
   volumes, enVols, status, year, color, blurb, next: null,
+  japanOnly: enVols === 0,
+  preorder: preorder || [],
 })));
 
 // Every entry belongs to a `work`; standard tankōbon runs are their own work.
@@ -142,7 +147,13 @@ const fullTitle = (s) => (s.edition === "Standard" ? s.title : `${s.title} · ${
 const PUBLISHERS = ["Shueisha", "Kodansha", "Shogakukan", "Kadokawa", "Hakusensha"];
 const GENRES = ["Action", "Adventure", "Comedy", "Crime", "Cyberpunk", "Dark Fantasy", "Drama", "Fantasy", "Historical", "Horror", "Mystery", "Psychological", "Romance", "Sci-Fi", "Slice of Life", "Sports", "Superhero", "Supernatural", "Thriller"];
 const AUTHORS = Array.from(new Set(SERIES.filter((s) => s.volumes > 0).map((s) => s.author))).sort();
-const jpOnly = (s, vol) => vol > (s.enVols ?? s.volumes);
+// A volume counts as Japanese-only when no English release has been announced
+// for it at all. A preorder means VIZ (or whoever) HAS announced an English
+// date — it's just not shipped yet — so it must not be treated the same as a
+// volume with no English plan whatsoever.
+const jpOnly = (s, vol) => vol > (s.enVols ?? s.volumes) && !(s.preorder || []).includes(vol);
+/** Volume is announced but not yet released — available for preorder only. */
+const isPreorder = (s, vol) => s.preorder && s.preorder.includes(vol);
 
 const COUNTRIES = ("Afghanistan|Albania|Algeria|Andorra|Angola|Antigua and Barbuda|Argentina|Armenia|Australia|Austria|Azerbaijan|Bahamas|Bahrain|Bangladesh|Barbados|Belarus|Belgium|Belize|Benin|Bhutan|Bolivia|Bosnia and Herzegovina|Botswana|Brazil|Brunei|Bulgaria|Burkina Faso|Burundi|Cabo Verde|Cambodia|Cameroon|Canada|Central African Republic|Chad|Chile|China|Colombia|Comoros|Congo|Congo (DRC)|Costa Rica|Côte d'Ivoire|Croatia|Cuba|Cyprus|Czechia|Denmark|Djibouti|Dominica|Dominican Republic|Ecuador|Egypt|El Salvador|Equatorial Guinea|Eritrea|Estonia|Eswatini|Ethiopia|Fiji|Finland|France|Gabon|Gambia|Georgia|Germany|Ghana|Greece|Grenada|Guatemala|Guinea|Guinea-Bissau|Guyana|Haiti|Honduras|Hong Kong SAR|Hungary|Iceland|India|Indonesia|Iran|Iraq|Ireland|Israel|Italy|Jamaica|Japan|Jordan|Kazakhstan|Kenya|Kiribati|Kosovo|Kuwait|Kyrgyzstan|Laos|Latvia|Lebanon|Lesotho|Liberia|Libya|Liechtenstein|Lithuania|Luxembourg|Macao SAR|Madagascar|Malawi|Malaysia|Maldives|Mali|Malta|Marshall Islands|Mauritania|Mauritius|Mexico|Micronesia|Moldova|Monaco|Mongolia|Montenegro|Morocco|Mozambique|Myanmar|Namibia|Nauru|Nepal|Netherlands|New Zealand|Nicaragua|Niger|Nigeria|North Korea|North Macedonia|Norway|Oman|Pakistan|Palau|Palestine|Panama|Papua New Guinea|Paraguay|Peru|Philippines|Poland|Portugal|Puerto Rico|Qatar|Romania|Russia|Rwanda|Saint Kitts and Nevis|Saint Lucia|Saint Vincent and the Grenadines|Samoa|San Marino|São Tomé and Príncipe|Saudi Arabia|Senegal|Serbia|Seychelles|Sierra Leone|Singapore|Slovakia|Slovenia|Solomon Islands|Somalia|South Africa|South Korea|South Sudan|Spain|Sri Lanka|Sudan|Suriname|Sweden|Switzerland|Syria|Taiwan|Tajikistan|Tanzania|Thailand|Timor-Leste|Togo|Tonga|Trinidad and Tobago|Tunisia|Turkey|Turkmenistan|Tuvalu|Uganda|Ukraine|United Arab Emirates|United Kingdom|United States|Uruguay|Uzbekistan|Vanuatu|Vatican City|Venezuela|Vietnam|Yemen|Zambia|Zimbabwe").split("|");
 
@@ -421,8 +432,9 @@ const Styles = React.memo(function Styles() {
 .hd-tag{display:inline-block;border:1px solid var(--line);background:var(--surface2);
   color:var(--ink2);border-radius:5px;padding:2.5px 8px;font-size:11.5px}
 .hd-eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);font-weight:500}
-.hd-jp{position:absolute;top:2px;right:3px;font-size:8.5px;font-weight:600;letter-spacing:.03em;line-height:1;
+.hd-jp,.hd-pre{position:absolute;top:2px;right:3px;font-size:8.5px;font-weight:600;letter-spacing:.03em;line-height:1;
   padding:1.5px 2.5px;border-radius:3px;background:var(--bengara);color:#F7EFE9}
+.hd-pre{top:auto;bottom:2px;background:var(--accent);color:var(--on-accent)}
 
 /* --- shelving -------------------------------------------------------- */
 /* Shelves are plain rounded bars the books stand on — no case, no walls, no
@@ -1694,9 +1706,10 @@ function SeriesSheet({ series, entry, collection, readOnly, ownerName, country, 
                 <button key={v} className="hd-vol" data-state={state} disabled={readOnly}
                   onClick={() => (mark === "wish" ? actions.toggleWish(series.id, v) : actions.toggleOwned(series.id, v))}
                   onContextMenu={(e) => { e.preventDefault(); if (!readOnly) actions.toggleWish(series.id, v); }}
-                  title={jpOnly(series, v) ? `Volume ${v} — Japanese edition only` : `Volume ${v}`}>
+                  title={jpOnly(series, v) ? `Volume ${v} — Japanese edition only` : isPreorder(series, v) ? `Volume ${v} — Pre-order` : `Volume ${v}`}>
                   {v}
                   {jpOnly(series, v) && <span className="hd-jp">JP</span>}
+                  {isPreorder(series, v) && <span className="hd-pre">PRE</span>}
                   {state === "wish" && <Heart size={9} style={{ position: "absolute", bottom: 3, left: 4 }} />}
                 </button>
               );
@@ -1715,7 +1728,7 @@ function SeriesSheet({ series, entry, collection, readOnly, ownerName, country, 
                     Volume {v}
                     {jpOnly(series, v) && <span style={{ color: "var(--bengara)", fontSize: 11.5, marginLeft: 7 }}>Japanese only</span>}
                   </div>
-                  <div className="hd-faint" style={{ fontSize: 12 }}>{best ? `from ${money(best.currency, best.price, best.dec)}` : "unavailable"}</div>
+                  
                   <button className="hd-btn hd-btn-buy hd-btn-sm" onClick={() => onBuy(series.id, v)}>
                     <ShoppingBag size={12} /> Buy
                   </button>
@@ -1880,7 +1893,7 @@ function DiscoverView({ collection, country, onOpenSeries, onBuy, actions }) {
                     )}
                     <div className="hd-faint" style={{ fontSize: 11.5, marginTop: 2 }}>
                       {e.owned.length > 0 ? `You own ${e.owned.length}` : "Not on your shelf"}
-                      {best ? ` · vol. ${nextVol} from ${money(best.currency, best.price, best.dec)}` : ""}
+                      {nextVol ? ` · next: vol. ${nextVol}` : ""}
                     </div>
                     <div className="flex" style={{ gap: 6, marginTop: "auto", paddingTop: 9 }}>
                       <button className="hd-btn hd-btn-buy hd-btn-sm" onClick={(ev) => { ev.stopPropagation(); onBuy(s.id, nextVol); }}>
@@ -2033,6 +2046,7 @@ function WishlistView({ collection, country, plan, onPremium, onBuy, onOpenSerie
                     <div className="hd-faint" style={{ fontSize: 12, marginTop: 3 }}>
                       Volume {vol}
                       {jpOnly(s, vol) && <span style={{ color: "var(--bengara)" }}> · Japanese edition only</span>}
+                      {isPreorder(s, vol) && <span style={{ color: "var(--accent)" }}> · Pre-order</span>}
                     </div>
                   </div>
                   <div className="acts">
@@ -2596,7 +2610,7 @@ function HomeView({ account, profile, plan, collection, country, friendIds, onTa
                       {e.owned.length}/{s.volumes} · {listGaps(gaps)}
                     </div>
                   </div>
-                  <div className="hd-faint" style={{ fontSize: 12 }}>{best ? `from ${money(best.currency, best.price, best.dec)}` : ""}</div>
+                  
                   <button className="hd-btn hd-btn-buy hd-btn-sm" onClick={() => onBuy(s.id, gaps[0])}>
                     <ShoppingBag size={13} /> Vol. {gaps[0]}
                   </button>

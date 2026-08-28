@@ -15,7 +15,7 @@
   { "id": "nana", "title": "NANA", "publisherEn": "VIZ Media", "volumes": 21, "edition": "Standard" },
 
   { "id": "mamayuyu", "title": "MamaYuyu", "searchTitle": "MamaYuyu VIZ", "publisherEn": "VIZ Media", "volumes": 4,
-    "edition": "Standard" },
+    "edition": "Japanese Import", "japanOnly": true },
 
   { "id": "vagabond-vizbig", "title": "Vagabond (VIZBIG Edition)", "searchTitle": "Vagabond VIZBIG",
     "publisherEn": "VIZ Media", "volumes": 12, "edition": "VIZBIG Edition" },
