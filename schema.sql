@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS series_prefs (
 
 CREATE TABLE IF NOT EXISTS favourites (
   user_id   TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  slot      INTEGER NOT NULL CHECK (slot BETWEEN 0 AND 3),
+  slot      INTEGER NOT NULL CHECK (slot BETWEEN 0 AND 4),  -- 0-3 = favourite series, 4 = favourite-volume series when not in 0-3
   series_id TEXT NOT NULL,
   volume    INTEGER,                                 -- set on the favourite-volume row
   PRIMARY KEY (user_id, slot)

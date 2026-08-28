@@ -20,7 +20,7 @@ import {
   Bookmark, Loader2, Library, Globe, Mail, Lock, User as UserIcon, LogOut,
   SlidersHorizontal, Sparkles, Trash2, ShoppingBag, ExternalLink, Pencil, Star,
 } from "lucide-react";
-import { useUser, useClerk, SignIn, SignUp } from "@clerk/clerk-react";
+import { useUser, useClerk, useAuth, SignIn, SignUp } from "@clerk/clerk-react";
 
 /* ------------------------------------------------------------------ *
  * MOCK DATA
@@ -501,6 +501,15 @@ const Styles = React.memo(function Styles() {
   box-shadow:0 8px 24px -8px rgba(0,0,0,.5);animation:hd-toast .2s ease-out;max-width:88vw;text-align:center}
 @media(min-width:768px){.hd-toast{bottom:28px}}
 @keyframes hd-toast{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes hd-spin{to{transform:rotate(360deg)}}
+.animate-spin{animation:hd-spin 1s linear infinite}
+.hd-savestate{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:500;
+  padding:4px 9px;border-radius:999px;white-space:nowrap;
+  background:var(--surface);color:var(--ink2);border:1px solid var(--line2)}
+.hd-savestate[data-state="saved"]{color:var(--moss,#5A7A52)}
+.hd-savestate[data-state="error"]{color:var(--bengara);border-color:var(--bengara)}
+@media(max-width:600px){.hd-savestate{font-size:0;gap:0;padding:5px}.hd-savestate svg{width:14px;height:14px}}
+
 
 .hd-tab{position:relative;padding:8px 12px;font-size:13.5px;color:var(--ink2);border-radius:8px;
   cursor:pointer;background:transparent;border:none;font-family:var(--sans);display:inline-flex;align-items:center;gap:7px}
@@ -4204,50 +4213,60 @@ const NAV = [
 const MOBILE_NAV = ["home", "shelf", "discover", "wishlist", "premium", "people", "profile"];
 
 export default function App() {
-  const [theme, setTheme] = useState("light");
-  const [screen, setScreen] = useState("landing"); // landing | auth | app
-  const [authMode, setAuthMode] = useState("signup");
-  const [tab, setTab] = useState("home");
-  const [account, setAccount] = useState({ username: "hondana", email: "hondana@example.com", country: "Australia" });
-  const [profile, setProfile] = useState({
-    avatarColor: AVATAR_COLORS[0],     bio: "Slowly closing the gaps. Vinland Saga is the one I'd save from a fire.",
-    favourites: ["vinland", "monster", "witch", "frieren"],
-    favouriteVolume: { id: "vinland", vol: 22 },
+  const [theme, setThemeRaw] = useState(() => {
+    try { return localStorage.getItem("hd-theme") || "light"; } catch { return "light"; }
   });
-  const { user, isSignedIn } = useUser();
+  const setTheme = useCallback((t) => {
+    setThemeRaw(t);
+    try { localStorage.setItem("hd-theme", t); } catch { /* private mode */ }
+  }, []);
+  const [screen, setScreen] = useState("loading"); // loading | landing | auth | app
+  const [authMode, setAuthMode] = useState("signup");
+  const [tab, setTab] = useState(() => {
+    try { return sessionStorage.getItem("hd-tab") || "home"; } catch { return "home"; }
+  });
+  const [account, setAccount] = useState({ username: "", email: "", country: "" });
+  const [profile, setProfile] = useState({
+    avatarColor: AVATAR_COLORS[0], bio: "",
+    favourites: [null, null, null, null],
+    favouriteVolume: null,
+  });
+  const { user, isSignedIn, isLoaded } = useUser();
   const { signOut } = useClerk();
+  const { getToken } = useAuth();
+  const [saveState, setSaveState] = useState("idle"); // idle | saving | saved | error
 
-    useEffect(() => {
+  useEffect(() => {
+    if (!isLoaded) return;                              // Clerk still checking — stay on "loading"
     if (isSignedIn && user) {
       setAccount((a) => ({
         ...a,
         username: user.username || user.firstName || a.username,
         email: user.primaryEmailAddress?.emailAddress || a.email,
+        country: a.country || "Australia",
       }));
       setScreen("app");
-      setTab("home");
-    } else if (isSignedIn === false && screen === "app") {
-      // Clerk has confirmed you're signed out, but the app still thinks
-      // you're in — send it back to the landing page.
+      // Don't reset tab — let sessionStorage preserve it across refreshes
+    } else {
       setScreen("landing");
     }
-  }, [isSignedIn, user, screen]);
-  const [collection, setCollection] = useState(() => buildCollection(MY_COLLECTION));
-  const [following, setFollowing] = useState(["f1", "f2", "f3"]);
-  const [followers, setFollowers] = useState(["f1", "f6", "f7", "f10"]);
+  }, [isLoaded, isSignedIn, user]);
+
+  // Persist the current tab so a refresh stays put
+  useEffect(() => {
+    try { sessionStorage.setItem("hd-tab", tab); } catch { /* private mode */ }
+  }, [tab]);
+
+  const [collection, setCollection] = useState({});
+  const [following, setFollowing] = useState([]);
+  const [followers, setFollowers] = useState([]);
   const [peopleTab, setPeopleTab] = useState("following");
-  const [notifs, setNotifs] = useState(() => [
-    { id: "n1", userId: "f10", text: "Ananya Nair followed you", when: "2 hours ago", read: false },
-    { id: "n2", userId: "f7", text: "Yuki Tanaka followed you", when: "Yesterday", read: false },
-    { id: "n3", userId: null, text: "Vinland Saga vol. 29 is out on 12 Sep in Australia", when: "3 days ago", read: true },
-    { id: "n4", userId: "f6", text: "Marcus Bell shelved Berserk Deluxe Edition vol. 14", when: "5 days ago", read: true },
-  ]);
+  const [notifs, setNotifs] = useState([]);
   const [notifOpen, setNotifOpen] = useState(false);
   const [plan, setPlan] = useState("free");
   const [billing, setBilling] = useState({ interval: "yearly", renew: true, periodEnd: "" });
   const [exportOpen, setExportOpen] = useState(false);
-  const [shelfOrder, setShelfOrder] = useState(() => Object.keys(buildCollection(MY_COLLECTION))
-    .sort((a, b) => SERIES_BY_ID[a].title.localeCompare(SERIES_BY_ID[b].title)));
+  const [shelfOrder, setShelfOrder] = useState([]);
 
   /** Move `fromId` to sit where `toId` currently is. */
   const reorderShelf = useCallback((fromId, toId) => {
@@ -4281,6 +4300,71 @@ export default function App() {
   }, []);
   useEffect(() => () => clearTimeout(toastTimer.current), []);
   useEffect(() => () => followTimers.current.forEach(clearTimeout), []);
+
+  /* ---- shelf persistence -------------------------------------------------
+   * On sign-in, pull the shelf from D1. On any change afterwards, push it
+   * back (debounced), showing a Saving… / Saved indicator so it's always
+   * clear whether what's on screen is actually stored.
+   * ---------------------------------------------------------------------- */
+  const shelfLoaded = useRef(false);
+  const saveTimer = useRef(null);
+
+  // Load once, when Clerk confirms a signed-in user.
+  useEffect(() => {
+    if (!isLoaded || !isSignedIn) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const token = await getToken();
+        const res = await fetch("/api/collection", { headers: { Authorization: `Bearer ${token}` } });
+        if (!res.ok) throw new Error(await res.text());
+        const data = await res.json();
+        if (cancelled) return;
+        setCollection(data.collection || {});
+        setShelfOrder(data.shelfOrder || []);
+        setProfile((p) => ({
+          ...p,
+          favourites: (data.favourites && data.favourites.length === 4) ? data.favourites : [null, null, null, null],
+          favouriteVolume: data.favouriteVolume || null,
+        }));
+      } catch (err) {
+        console.error("Couldn't load your shelf:", err);
+      } finally {
+        if (!cancelled) shelfLoaded.current = true;   // only allow saves after the first load
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [isLoaded, isSignedIn, getToken]);
+
+  // Save whenever the shelf changes — but not until after the initial load,
+  // or we'd overwrite the stored shelf with the empty starting state.
+  useEffect(() => {
+    if (!isSignedIn || !shelfLoaded.current) return;
+    setSaveState("saving");
+    clearTimeout(saveTimer.current);
+    saveTimer.current = setTimeout(async () => {
+      try {
+        const token = await getToken();
+        const res = await fetch("/api/collection", {
+          method: "PUT",
+          headers: { Authorization: `Bearer ${token}`, "content-type": "application/json" },
+          body: JSON.stringify({
+            collection,
+            shelfOrder,
+            favourites: profile.favourites,
+            favouriteVolume: profile.favouriteVolume,
+          }),
+        });
+        if (!res.ok) throw new Error(await res.text());
+        setSaveState("saved");
+        setTimeout(() => setSaveState("idle"), 1800);
+      } catch (err) {
+        console.error("Couldn't save your shelf:", err);
+        setSaveState("error");
+      }
+    }, 700);   // debounce: batch rapid edits into one write
+    return () => clearTimeout(saveTimer.current);
+  }, [collection, shelfOrder, profile.favourites, profile.favouriteVolume, isSignedIn, getToken]);
 
   useEffect(() => {
     if (!notifOpen) return;
@@ -4440,6 +4524,19 @@ export default function App() {
   const openEntry = openId ? entryOf(activeCollection, openId) : EMPTY_ENTRY;
   const country = account.country || "Australia";
 
+    /* While Clerk is still checking the session, show nothing — this kills
+       the flash of the landing page that appears for a frame on refresh. */
+    if (screen === "loading") {
+      return (
+        <div className="hd-root" data-theme={theme} style={{ minHeight: "100vh" }}>
+          <Styles />
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100vh" }}>
+            <Loader2 size={24} className="animate-spin" style={{ color: "var(--ink3)" }} />
+          </div>
+        </div>
+      );
+    }
+
     if (screen !== "app") {
     return (
       <div className="hd-root" data-theme={theme} style={{ minHeight: "100vh" }}>
@@ -4449,7 +4546,7 @@ export default function App() {
             onStart={() => { setAuthMode("signup"); setScreen("auth"); }}
             onSignIn={() => { setAuthMode("login"); setScreen("auth"); }} />
         ) : (
-                       <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px 16px" }}>
+          <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px 16px" }}>
             <div style={{ width: "100%", maxWidth: 400 }}>
               {authMode === "signup" ? (
                 <SignUp
@@ -4522,6 +4619,13 @@ export default function App() {
         </nav>
 
         <div className="flex items-center" style={{ gap: 4, marginLeft: "auto" }}>
+          {saveState !== "idle" && (
+            <span className="hd-savestate" data-state={saveState} title={saveState === "error" ? "Couldn't save — check your connection" : undefined}>
+              {saveState === "saving" && <><Loader2 size={12} className="animate-spin" /> Saving…</>}
+              {saveState === "saved" && <><Check size={12} /> Saved</>}
+              {saveState === "error" && <><X size={12} /> Not saved</>}
+            </span>
+          )}
           <button className="hd-btn hd-btn-ghost hd-btn-sm" onClick={() => setScanOpen(true)} aria-label="Scan a barcode"><ScanLine size={15} /></button>
           <div ref={notifRef} style={{ position: "relative" }}>
             <button className="hd-btn hd-btn-ghost hd-btn-sm" onClick={openNotifs} aria-label="Notifications" style={{ position: "relative" }}>
