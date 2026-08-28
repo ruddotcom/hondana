@@ -168,7 +168,7 @@ function offerFor(country, series, vol, shop, isImport) {
   return {
     shop, price, currency, dec,
     stock: hash(shop + series.id + vol + "s") % 9 !== 0,
-    url: shopUrl(shop, { isbn: ISBN_FOR(series, vol), title: series.title, volume: vol, country }),
+    url: shopUrl(shop, { isbn: ISBN_FOR(series, vol), title: series.title, volume: vol, author: series.author, country }),
   };
 }
 function offersFor(country, series, vol) {

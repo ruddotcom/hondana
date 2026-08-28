@@ -194,12 +194,37 @@ export function storefront(country) {
   };
 }
 
+/** Shopify's slug rule: lowercase, accents stripped, everything that isn't
+ *  a-z/0-9 collapsed to a single hyphen, no leading/trailing hyphen. QBD runs
+ *  on Shopify and builds product URLs this way — confirmed against a real
+ *  product page, not guessed. */
+const slugify = (s) =>
+  s.toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+
+/**
+ * Shops with a confirmed, working product-URL pattern — built from real data
+ * instead of going through a search page. Only add a shop here once you've
+ * verified the pattern against an actual product URL from their site.
+ */
+const DIRECT_LINK = {
+  // Confirmed: https://www.qbd.com.au/jujutsu-kaisen-23/gege-akutami/9781974746293/
+  "QBD Books": ({ title, volume, author, isbn }) =>
+    `https://www.qbd.com.au/${slugify(`${title}${volume ? ` ${volume}` : ""}`)}/${slugify(author || "")}/${isbn}/`,
+};
+
 /**
  * The outbound URL for one shop and one volume. Prefers the ISBN when we have
  * it, since that lands on the exact book rather than a series page.
  */
-export function shopUrl(shop, { isbn, title, volume, country } = {}) {
+export function shopUrl(shop, { isbn, title, volume, author, country } = {}) {
   const q = encodeURIComponent(`${title || ""}${volume ? ` Vol. ${volume}` : ""}`.trim());
+
+  const direct = DIRECT_LINK[shop];
+  if (direct && isbn && title && author) {
+    try { return direct({ title, volume, author, isbn }); } catch { /* fall through */ }
+  }
+
   const template = SHOP_LINKS[shop];
   if (template) {
     // {isbn} lands on the exact book; {q} is the title search, which is what
