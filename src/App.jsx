@@ -4449,20 +4449,54 @@ export default function App() {
             onStart={() => { setAuthMode("signup"); setScreen("auth"); }}
             onSignIn={() => { setAuthMode("login"); setScreen("auth"); }} />
         ) : (
-                    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: 24, gap: 16 }}>
-            {authMode === "signup"
-              ? <SignUp routing="virtual" signInUrl="#" afterSignUpUrl="/" />
-              : <SignIn routing="virtual" signUpUrl="#" afterSignInUrl="/" />}
-            <button onClick={() => setAuthMode(authMode === "signup" ? "login" : "signup")}
-              style={{ background: "none", border: "none", cursor: "pointer", color: "var(--accent, #C2542A)",
-                fontSize: 14, fontFamily: "Inter, sans-serif" }}>
-              {authMode === "signup" ? "Already have an account? Sign in" : "Don't have an account? Sign up"}
-            </button>
-            <button onClick={() => setScreen("landing")}
-              style={{ background: "none", border: "none", cursor: "pointer", color: "var(--ink2, #6A6153)",
-                fontSize: 13, fontFamily: "Inter, sans-serif" }}>
-              ← Back
-            </button>
+                       <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", padding: "24px 16px" }}>
+            <div style={{ width: "100%", maxWidth: 400 }}>
+              {authMode === "signup" ? (
+                <SignUp
+                  routing="virtual"
+                  signInUrl="#"
+                  afterSignUpUrl="/"
+                  appearance={{
+                    elements: {
+                      rootBox: { width: "100%" },
+                      card: { width: "100%", boxShadow: "none", border: "1px solid var(--line2, #E4DACB)" },
+                      footer: { display: "none" },
+                    },
+                  }}
+                />
+              ) : (
+                <SignIn
+                  routing="virtual"
+                  signUpUrl="#"
+                  afterSignInUrl="/"
+                  appearance={{
+                    elements: {
+                      rootBox: { width: "100%" },
+                      card: { width: "100%", boxShadow: "none", border: "1px solid var(--line2, #E4DACB)" },
+                      footer: { display: "none" },
+                    },
+                  }}
+                />
+              )}
+              <div style={{
+                textAlign: "center", marginTop: -1, padding: "14px 20px",
+                border: "1px solid var(--line2, #E4DACB)", borderTop: "none",
+                borderRadius: "0 0 12px 12px", background: "var(--surface, #FBF7EE)",
+              }}>
+                <button onClick={() => setAuthMode(authMode === "signup" ? "login" : "signup")}
+                  style={{ background: "none", border: "none", cursor: "pointer", color: "var(--accent, #C2542A)",
+                    fontSize: 13.5, fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
+                  {authMode === "signup" ? "Already have an account? Sign in" : "Don't have an account? Sign up"}
+                </button>
+              </div>
+              <div style={{ textAlign: "center", marginTop: 16 }}>
+                <button onClick={() => setScreen("landing")}
+                  style={{ background: "none", border: "none", cursor: "pointer", color: "var(--ink2, #6A6153)",
+                    fontSize: 13, fontFamily: "Inter, sans-serif" }}>
+                  ← Back
+                </button>
+              </div>
+            </div>
           </div>
         )}
         {toast && <div className="hd-toast" key={toast.key}>{toast.msg}</div>}
