@@ -23,6 +23,15 @@
 /** Shops that will ship a Japanese edition anywhere. */
 export const IMPORT_SHOPS = ["Kinokuniya", "Amazon JP", "CDJapan"];
 
+/**
+ * For series that never had a wider import network pick them up — usually a
+ * digital-first Shonen Jump release VIZ later put into a physical Japanese
+ * printing with no separate import distribution. Amazon.com carries these
+ * because their marketplace includes third-party sellers importing directly;
+ * the specialist import shops above generally don't stock them at all.
+ */
+export const AMAZON_ONLY_IMPORT = ["Amazon US"];
+
 /** Anywhere without a curated list still gets something local-first. */
 export const FALLBACK_SHOPS = ["Local comic shop", "Kinokuniya", "CDJapan"];
 

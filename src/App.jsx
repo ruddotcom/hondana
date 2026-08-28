@@ -13,7 +13,7 @@
 import React, {
   useState, useMemo, useRef, useEffect, useCallback,
 } from "react";
-import { STOREFRONTS, IMPORT_SHOPS, storefront, shopUrl } from "./retailers.js";
+import { STOREFRONTS, IMPORT_SHOPS, AMAZON_ONLY_IMPORT, storefront, shopUrl } from "./retailers.js";
 import {
   Bell, Crown, Search, ScanLine, Share2, Upload, GripVertical, ChevronUp, Users, Settings as SettingsIcon, Moon, Sun, Plus, Home,
   Check, Heart, X, ChevronRight, ChevronDown, Camera, ArrowLeft, UserPlus,
@@ -174,7 +174,9 @@ function offerFor(country, series, vol, shop, isImport) {
 function offersFor(country, series, vol) {
   const isImport = jpOnly(series, vol);
   const shops = isImport
-    ? (country === "Japan" ? storefront(country).shops.slice(0, 4) : IMPORT_SHOPS)
+    ? (country === "Japan" ? storefront(country).shops.slice(0, 4)
+       : series.japanOnly ? AMAZON_ONLY_IMPORT      // never had an import network of its own
+       : IMPORT_SHOPS)
     : storefront(country).shops;
   return shops.map((shop) => offerFor(country, series, vol, shop, isImport && country !== "Japan"))
     .sort((a, b) => (a.stock === b.stock ? a.price - b.price : a.stock ? -1 : 1));
@@ -616,15 +618,13 @@ const Styles = React.memo(function Styles() {
 /* wishlist rows: two lines on a phone, one line once there's room */
 .hd-wishrow{display:grid;gap:8px 11px;align-items:center;
   grid-template-columns:auto 1fr;
-  grid-template-areas:"cover title" "price price" "acts acts"}
+  grid-template-areas:"cover title" "acts acts"}
 .hd-wishrow .cover{grid-area:cover}
 .hd-wishrow .title{grid-area:title}
-.hd-wishrow .price{grid-area:price}
 .hd-wishrow .acts{grid-area:acts;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 @media(min-width:680px){
-  .hd-wishrow{grid-template-columns:auto 1fr auto auto;
-    grid-template-areas:"cover title price acts"}
-  .hd-wishrow .price{text-align:right}
+  .hd-wishrow{grid-template-columns:auto 1fr auto;
+    grid-template-areas:"cover title acts"}
   .hd-wishrow .acts{flex-wrap:nowrap;justify-content:flex-end}
 }
 .hd-favgrid{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
@@ -1500,8 +1500,6 @@ function ShelfView({ collection, readOnly, owner, order, onReorder, onOpenSeries
 function BuySheet({ series, vol, country, plan, onPremium, onClose, onBuy, onWish, wished }) {
   const offers = useMemo(() => offersFor(country, series, vol), [country, series, vol]);
   const isImport = jpOnly(series, vol);
-  const cheapest = offers.find((o) => o.stock);
-  const history = cheapest ? priceHistory(country, series, vol, cheapest.price) : null;
 
   return (
     <div className="hd-overlay" onClick={onClose}>
@@ -1525,36 +1523,14 @@ function BuySheet({ series, vol, country, plan, onPremium, onClose, onBuy, onWis
           </div>
         </div>
 
-        {history && (
-          <div style={{ padding: "14px 18px", borderBottom: "1px solid var(--line)" }}>
-            <div className="flex items-center justify-between" style={{ gap: 12 }}>
-              <div>
-                <div className="hd-eyebrow">Price history</div>
-                <div className="hd-faint" style={{ fontSize: 11.5, marginTop: 4 }}>
-                  {plan === "premium"
-                    ? `Twelve months · low ${money(cheapest.currency, Math.min(...history), cheapest.dec)}`
-                    : "Premium shows twelve months of prices"}
-                </div>
-              </div>
-              {plan === "premium"
-                ? <Sparkline points={history} />
-                : <button className="hd-btn hd-btn-quiet hd-btn-sm" onClick={onPremium}>Unlock</button>}
-            </div>
-          </div>
-        )}
-
         <div style={{ padding: "8px 18px 18px" }}>
+          <div className="hd-faint" style={{ fontSize: 12, padding: "10px 0 4px" }}>
+            Opens the shop's own search with this book's ISBN filled in — prices and stock are shown on their site.
+          </div>
           {offers.map((o) => (
             <div key={o.shop} className="flex items-center" style={{ gap: 10, padding: "11px 0", borderBottom: "1px solid var(--line)" }}>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 13.5, fontWeight: 500 }}>{o.shop}</div>
-                <div className="hd-faint" style={{ fontSize: 11.5, marginTop: 2 }}>
-                  {o.stock ? (o === cheapest ? "Cheapest in stock" : "In stock") : "Out of stock"}
-                </div>
-              </div>
-              <div className="hd-serif" style={{ fontSize: 15.5, opacity: o.stock ? 1 : .45 }}>{money(o.currency, o.price, o.dec)}</div>
-              <button className={"hd-btn hd-btn-sm " + (o === cheapest ? "hd-btn-buy" : "hd-btn-quiet")}
-                disabled={!o.stock} onClick={() => onBuy(o)}>
+              <div style={{ fontSize: 13.5, fontWeight: 500, flex: 1 }}>{o.shop}</div>
+              <button className="hd-btn hd-btn-sm hd-btn-buy" onClick={() => onBuy(o)}>
                 Buy <ExternalLink size={12} />
               </button>
             </div>
@@ -1566,7 +1542,11 @@ function BuySheet({ series, vol, country, plan, onPremium, onClose, onBuy, onWis
               onClick={() => onWish(series.id, vol)}>
               <Heart size={13} fill={wished ? "currentColor" : "none"} /> {wished ? "On your wishlist" : "Save to wishlist"}
             </button>
-            <span className="hd-faint" style={{ fontSize: 11 }}>Prices are indicative</span>
+            {plan !== "premium" && (
+              <button className="hd-btn hd-btn-quiet hd-btn-sm" onClick={onPremium}>
+                Premium tracks live prices
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -1611,7 +1591,7 @@ function SeriesSheet({ series, entry, collection, readOnly, ownerName, country, 
               </div>
             </div>
           </div>
-          <p className="hd-muted" style={{ fontSize: 13.5, lineHeight: 1.55, marginTop: 14 }}>{series.blurb}</p>
+          <p className="hd-muted" style={{ fontSize: 13.5, lineHeight: 1.55, marginTop: 14 }}>{series.synopsis || series.blurb}</p>
           {siblings.length > 1 && (
             <div style={{ marginTop: 14 }}>
               <div className="hd-eyebrow" style={{ marginBottom: 8 }}>Editions of this work</div>
@@ -2055,20 +2035,6 @@ function WishlistView({ collection, country, plan, onPremium, onBuy, onOpenSerie
                       {jpOnly(s, vol) && <span style={{ color: "var(--bengara)" }}> · Japanese edition only</span>}
                     </div>
                   </div>
-                  <div className="price">
-                    {shown ? (
-                      <>
-                        <div className="hd-serif" style={{ fontSize: 15, color: drop && plan === "premium" ? "var(--bengara)" : undefined }}>
-                          {money(shown.currency, shown.price, shown.dec)}
-                        </div>
-                        <div className="hd-faint" style={{ fontSize: 11 }}>
-                          {drop && plan === "premium"
-                            ? <>was <span style={{ textDecoration: "line-through" }}>{money(shown.currency, drop.was, shown.dec)}</span> · −{drop.pct}%</>
-                            : shown.shop}
-                        </div>
-                      </>
-                    ) : <div className="hd-faint" style={{ fontSize: 12 }}>Out of stock</div>}
-                  </div>
                   <div className="acts">
                     {plan === "premium" && (
                       <TargetControl s={s} vol={vol} target={target} best={best} onSet={actions.setTarget} />
@@ -2087,7 +2053,7 @@ function WishlistView({ collection, country, plan, onPremium, onBuy, onOpenSerie
               );
             })}
             <div className="hd-faint" style={{ fontSize: 11.5, marginTop: 12, lineHeight: 1.6 }}>
-              Prototype prices. Real listings would come from each shop's feed, and outbound links would carry honDana's affiliate tag.
+              Buy opens the shop's own search with this book's ISBN filled in. Live price tracking is coming with honDana Premium.
             </div>
           </>
         )}
@@ -3831,7 +3797,7 @@ function BookInfo({ pick, onClose }) {
           <div className="flex flex-wrap" style={{ gap: 5 }}>
             {s.genres.map((g) => <span key={g} className="hd-tag">{g}</span>)}
           </div>
-          <p className="hd-muted" style={{ fontSize: 13.5, lineHeight: 1.6, marginTop: 12 }}>{s.blurb}</p>
+          <p className="hd-muted" style={{ fontSize: 13.5, lineHeight: 1.6, marginTop: 12 }}>{s.synopsis || s.blurb}</p>
         </div>
       </div>
     </div>
@@ -4033,7 +3999,7 @@ function Landing({ theme, setTheme, onStart, onSignIn }) {
                   {chosen.author} · {chosen.publisher} / {chosen.en} · {chosen.status} since {chosen.year} · {chosen.volumes} volumes
                 </div>
                 <div className="hd-ldetail-meta" style={{ marginTop: 4 }}>{chosen.genres.join(" · ")}</div>
-                <p className="hd-ldetail-blurb">{chosen.blurb}</p>
+                <p className="hd-ldetail-blurb">{chosen.synopsis || chosen.blurb}</p>
               </>
             ) : (
               <div className="hd-ldetail-meta">Pick a book.</div>
@@ -4786,7 +4752,7 @@ export default function App() {
           onBuy={(offer) => {
             setBuying(null);
             if (offer.url) window.open(offer.url, "_blank", "noopener,noreferrer");
-            notify(`Opening ${offer.shop} — ${money(offer.currency, offer.price, offer.dec)}`);
+            notify(`Opening ${offer.shop}`);
           }}
           onClose={() => setBuying(null)} />
       )}

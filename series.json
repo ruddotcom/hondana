@@ -1,0 +1,24 @@
+[
+  { "id": "jjk", "title": "Jujutsu Kaisen", "publisherEn": "VIZ Media", "volumes": 30, "edition": "Standard" },
+
+  { "id": "onepiece", "title": "One Piece", "publisherEn": "VIZ Media", "volumes": 111, "edition": "Standard" },
+
+  { "id": "souleater", "title": "Soul Eater", "publisherEn": "Yen Press", "volumes": 25, "edition": "Standard" },
+  { "id": "souleater-perfect", "title": "Soul Eater: The Perfect Edition",
+    "searchTitle": "Soul Eater Perfect Edition", "publisherEn": "Square Enix Manga", "volumes": 17,
+    "edition": "Perfect Edition" },
+
+  { "id": "kagurabachi", "title": "Kagurabachi", "publisherEn": "VIZ Media", "volumes": 6, "edition": "Standard" },
+
+  { "id": "mha", "title": "My Hero Academia", "publisherEn": "VIZ Media", "volumes": 42, "edition": "Standard" },
+
+  { "id": "nana", "title": "NANA", "publisherEn": "VIZ Media", "volumes": 21, "edition": "Standard" },
+
+  { "id": "mamayuyu", "title": "MamaYuyu", "searchTitle": "MamaYuyu VIZ", "publisherEn": "VIZ Media", "volumes": 4,
+    "edition": "Standard" },
+
+  { "id": "vagabond-vizbig", "title": "Vagabond (VIZBIG Edition)", "searchTitle": "Vagabond VIZBIG",
+    "publisherEn": "VIZ Media", "volumes": 12, "edition": "VIZBIG Edition" },
+  { "id": "vagabond-definitive", "title": "Vagabond (Definitive Edition)", "searchTitle": "Vagabond Definitive Edition",
+    "publisherEn": "VIZ Media", "volumes": 5, "edition": "Definitive Edition" }
+]
