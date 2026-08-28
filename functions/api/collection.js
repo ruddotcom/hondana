@@ -6,13 +6,16 @@
  *
  * Every request is authenticated by verifying the Clerk session token
  * server-side. The browser never tells us *who* it is — it hands us a token,
- * and we ask Clerk to confirm it. A forged token gets rejected here, so no one
- * can read or write someone else's shelf.
+ * and we cryptographically verify it against Clerk's public keys. A forged
+ * or expired token gets rejected here, so no one can read or write someone
+ * else's shelf.
  *
  * Bindings this needs (already in wrangler.toml / the dashboard):
  *   env.DB                 the D1 database, bound as DB
  *   env.CLERK_SECRET_KEY   set via: wrangler pages secret put CLERK_SECRET_KEY
  */
+
+import { verifyToken } from "@clerk/backend";
 
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), {
@@ -21,29 +24,25 @@ const json = (data, status = 200) =>
   });
 
 /**
- * Confirm the caller's Clerk session and return their Clerk user record.
- * Returns null if the token is missing, malformed or rejected by Clerk.
- */
-/**
- * Confirm the caller's Clerk session and return their user id. This is the
- * one call every request needs — cheap, single round trip.
+ * Confirm the caller's Clerk session and return their user id.
+ *
+ * getToken() on the client hands us a signed JWT, not a session id — so the
+ * right way to check it is to verify the JWT's signature locally against
+ * Clerk's public key (what verifyToken does), not to call Clerk's
+ * sessions/verify REST endpoint, which expects a different kind of token
+ * entirely and will reject a JWT as invalid every time.
  */
 async function verifySession(request, env) {
   const auth = request.headers.get("Authorization") || "";
   const token = auth.startsWith("Bearer ") ? auth.slice(7) : null;
   if (!token) return null;
 
-  const res = await fetch("https://api.clerk.com/v1/sessions/verify", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${env.CLERK_SECRET_KEY}`,
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({ token }),
-  });
-  if (!res.ok) return null;
-  const session = await res.json();
-  return session?.user_id || null;
+  try {
+    const { sub } = await verifyToken(token, { secretKey: env.CLERK_SECRET_KEY });
+    return sub || null;   // `sub` is the Clerk user id the token was issued for
+  } catch {
+    return null;          // expired, malformed, or signed by a different app
+  }
 }
 
 /**
