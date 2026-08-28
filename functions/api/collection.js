@@ -24,13 +24,15 @@ const json = (data, status = 200) =>
  * Confirm the caller's Clerk session and return their Clerk user record.
  * Returns null if the token is missing, malformed or rejected by Clerk.
  */
-async function verify(request, env) {
+/**
+ * Confirm the caller's Clerk session and return their user id. This is the
+ * one call every request needs — cheap, single round trip.
+ */
+async function verifySession(request, env) {
   const auth = request.headers.get("Authorization") || "";
   const token = auth.startsWith("Bearer ") ? auth.slice(7) : null;
   if (!token) return null;
 
-  // Ask Clerk to verify the session token. This is the whole security model:
-  // we trust Clerk's answer, nothing the browser claims about itself.
   const res = await fetch("https://api.clerk.com/v1/sessions/verify", {
     method: "POST",
     headers: {
@@ -41,10 +43,16 @@ async function verify(request, env) {
   });
   if (!res.ok) return null;
   const session = await res.json();
-  if (!session?.user_id) return null;
+  return session?.user_id || null;
+}
 
-  // Pull the user's email so we can enforce one-account-per-email in our table.
-  const ures = await fetch(`https://api.clerk.com/v1/users/${session.user_id}`, {
+/**
+ * Full profile lookup — email and username. Only needed the first time we
+ * see a user, to create their row; every save after that skips this call
+ * entirely, which is most of what made saves feel slow.
+ */
+async function fetchProfile(userId, env) {
+  const ures = await fetch(`https://api.clerk.com/v1/users/${userId}`, {
     headers: { Authorization: `Bearer ${env.CLERK_SECRET_KEY}` },
   });
   if (!ures.ok) return null;
@@ -53,11 +61,10 @@ async function verify(request, env) {
     u?.email_addresses?.find((e) => e.id === u.primary_email_address_id)?.email_address ||
     u?.email_addresses?.[0]?.email_address ||
     null;
-
   return {
-    id: session.user_id,
+    id: userId,
     email,
-    username: u?.username || u?.first_name || (email ? email.split("@")[0] : session.user_id.slice(-8)),
+    username: u?.username || u?.first_name || (email ? email.split("@")[0] : userId.slice(-8)),
   };
 }
 
@@ -67,21 +74,37 @@ async function verify(request, env) {
  * UNIQUE COLLATE NOCASE index is what actually guarantees one account per
  * address at the database level.
  */
-async function ensureUser(env, who) {
+/**
+ * Make sure a row exists in `users` for this Clerk account. On the very first
+ * request from a new account this does a Clerk profile lookup and a
+ * username-clash check; on every request after that it's a single indexed
+ * lookup that finds the row already there and does nothing further. That's
+ * what keeps ordinary saves down to one D1 round trip instead of three.
+ */
+async function ensureUser(env, userId) {
+  const existing = await env.DB.prepare("SELECT id FROM users WHERE id = ?").bind(userId).first();
+  if (existing) {
+    // Fire-and-forget last-seen touch — doesn't need to block the response.
+    env.DB.prepare("UPDATE users SET last_seen_at = ? WHERE id = ?")
+      .bind(Math.floor(Date.now() / 1000), userId).run().catch(() => {});
+    return;
+  }
+
+  const who = await fetchProfile(userId, env);
+  if (!who) return;   // Clerk hiccup — the row will get created on the next request instead
+
   const now = Math.floor(Date.now() / 1000);
-  // A username has to be unique; if theirs collides, suffix it so the insert
-  // doesn't fail on a brand-new user.
   let username = who.username;
   const clash = await env.DB.prepare(
     "SELECT id FROM users WHERE username = ? COLLATE NOCASE AND id <> ?"
-  ).bind(username, who.id).first();
-  if (clash) username = `${username}-${who.id.slice(-4)}`;
+  ).bind(username, userId).first();
+  if (clash) username = `${username}-${userId.slice(-4)}`;
 
   await env.DB.prepare(
     `INSERT INTO users (id, email, username, last_seen_at, created_at)
      VALUES (?, ?, ?, ?, ?)
-     ON CONFLICT(id) DO UPDATE SET last_seen_at = excluded.last_seen_at`
-  ).bind(who.id, who.email || `${who.id}@clerk.local`, username, now, now).run();
+     ON CONFLICT(id) DO NOTHING`
+  ).bind(userId, who.email || `${userId}@clerk.local`, username, now, now).run();
 }
 
 /** Read the whole shelf back in the shape the client already uses. */
@@ -184,18 +207,18 @@ export async function onRequest({ request, env }) {
   if (!env.DB) return json({ error: "Database not bound" }, 500);
   if (!env.CLERK_SECRET_KEY) return json({ error: "Auth not configured" }, 500);
 
-  const who = await verify(request, env);
-  if (!who) return json({ error: "Not signed in" }, 401);
+  const userId = await verifySession(request, env);
+  if (!userId) return json({ error: "Not signed in" }, 401);
 
   try {
-    await ensureUser(env, who);
-
     if (request.method === "GET") {
-      return json(await loadShelf(env, who.id));
+      await ensureUser(env, userId);   // must finish before we can read their shelf
+      return json(await loadShelf(env, userId));
     }
     if (request.method === "PUT") {
       const body = await request.json();
-      await saveShelf(env, who.id, body);
+      await ensureUser(env, userId);   // usually a single cheap lookup — see above
+      await saveShelf(env, userId, body);
       return json({ ok: true, savedAt: Date.now() });
     }
     return json({ error: "Method not allowed" }, 405);

@@ -4357,14 +4357,25 @@ export default function App() {
         });
         if (!res.ok) throw new Error(await res.text());
         setSaveState("saved");
-        setTimeout(() => setSaveState("idle"), 1800);
+        setTimeout(() => setSaveState("idle"), 1400);
       } catch (err) {
         console.error("Couldn't save your shelf:", err);
         setSaveState("error");
       }
-    }, 700);   // debounce: batch rapid edits into one write
+    }, 250);   // short debounce: batch a rapid burst of taps, not much else
     return () => clearTimeout(saveTimer.current);
   }, [collection, shelfOrder, profile.favourites, profile.favouriteVolume, isSignedIn, getToken]);
+
+  // Warn before leaving mid-save, so a reload can't race the write and lose it.
+  useEffect(() => {
+    const warn = (e) => {
+      if (saveState !== "saving") return;
+      e.preventDefault();
+      e.returnValue = "";   // required for the browser to show its own prompt
+    };
+    window.addEventListener("beforeunload", warn);
+    return () => window.removeEventListener("beforeunload", warn);
+  }, [saveState]);
 
   useEffect(() => {
     if (!notifOpen) return;
