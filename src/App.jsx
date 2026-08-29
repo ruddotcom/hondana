@@ -40,27 +40,27 @@ const SERIES = [
   { id: "mha", title: "My Hero Academia", jp: "僕のヒーローアカデミア", author: "Kohei Horikoshi", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Adventure", "Superhero"], volumes: 42, enVols: 42, status: "Completed", year: 2014, color: "#8A5C39", blurb: "Izuku Midoriya is born without a Quirk in a world where nearly everyone has one. After a chance encounter with the greatest hero, All Might, he inherits a powerful ability and enrols at U.A. High School to train as a professional hero.", next: null },
   { id: "csm", title: "Chainsaw Man", jp: "チェンソーマン", author: "Tatsuki Fujimoto", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Horror", "Comedy"], volumes: 24, enVols: 21, status: "Completed", year: 2018, ended: "March 2026", color: "#9D4636", blurb: "Denji, a dirt-poor young man living with his Chainsaw Devil pet Pochita, merges with him after a betrayal and becomes the Chainsaw Man — then gets recruited by a government agency that hunts Devils threatening humanity.", next: null },
   { id: "vinland", title: "Vinland Saga", jp: "ヴィンランド・サガ", author: "Makoto Yukimura", publisher: "Kodansha", en: "Kodansha USA", genres: ["Historical", "Drama", "Action"], volumes: 28, enVols: 26, status: "Ongoing", year: 2005, color: "#4C6150", blurb: "Young Thorfinn grows up on the battlefields of eleventh-century Europe, driven by a thirst for vengeance against his father's killer. As the years pass, he begins searching for a land beyond war — the fabled Vinland.", next: { num: 29, date: "12 Sep 2026" } },
-  { id: "bluep", title: "Blue Period", jp: "ブルーピリオド", author: "Tsubasa Yamaguchi", publisher: "Kodansha", en: "Kodansha USA", genres: ["Drama", "Slice of Life"], volumes: 17, enVols: 15, status: "Ongoing", year: 2017, color: "#42557B", blurb: "A high-achieving delinquent falls for oil painting at seventeen and sets himself at Japan's hardest art school.", next: { num: 18, date: "3 Oct 2026" } },
+  { id: "bluep", title: "Blue Period", jp: "ブルーピリオド", author: "Tsubasa Yamaguchi", publisher: "Kodansha", en: "Kodansha USA", genres: ["Drama", "Slice of Life"], volumes: 17, enVols: 15, status: "Ongoing", year: 2017, color: "#42557B", blurb: "Yatora Yaguchi coasts through high school as a top student until a chance encounter with a painting stops him cold. He throws himself into art and aims for Tokyo University of the Arts — the most competitive art school in Japan.", next: { num: 18, date: "3 Oct 2026" } },
   { id: "monster", title: "Monster", jp: "モンスター", author: "Naoki Urasawa", publisher: "Shogakukan", en: "Viz Media", genres: ["Crime", "Thriller", "Drama"], volumes: 18, enVols: 18, status: "Completed", year: 1994, color: "#5A4A56", blurb: "Dr. Kenzo Tenma, a brilliant Japanese surgeon living in Germany, saves a young boy's life over a politician's. Years later he discovers the boy has grown into a serial killer, and sets out across Europe to stop him.", next: null },
-  { id: "witch", title: "Witch Hat Atelier", jp: "とんがり帽子のアトリエ", author: "Kamome Shirahama", publisher: "Kodansha", en: "Kodansha USA", genres: ["Fantasy", "Adventure"], volumes: 13, enVols: 12, status: "Ongoing", year: 2016, color: "#625589", blurb: "Magic is drawn, not spoken — and a girl who was never meant to hold a pen is taken in by a reclusive witch.", next: { num: 14, date: "24 Sep 2026" } },
-  { id: "kaguya", title: "Kaguya-sama: Love Is War", jp: "かぐや様は告らせたい", author: "Aka Akasaka", publisher: "Shueisha", en: "Viz Media", genres: ["Romance", "Comedy"], volumes: 28, enVols: 28, status: "Completed", year: 2015, color: "#95606D", blurb: "Two student council prodigies are hopelessly in love and would each rather die than confess first.", next: null },
-  { id: "dungeon", title: "Delicious in Dungeon", jp: "ダンジョン飯", author: "Ryoko Kui", publisher: "Kadokawa", en: "Yen Press", genres: ["Fantasy", "Comedy", "Adventure"], volumes: 14, enVols: 14, status: "Completed", year: 2014, color: "#86682F", blurb: "A broke adventuring party descends to rescue their swallowed swordswoman, eating every monster they meet on the way down.", next: null },
-  { id: "frieren", title: "Frieren: Beyond Journey's End", jp: "葬送のフリーレン", author: "Kanehito Yamada", publisher: "Shogakukan", en: "Viz Media", genres: ["Fantasy", "Adventure", "Drama"], volumes: 14, enVols: 12, status: "Ongoing", year: 2020, color: "#487872", blurb: "An elf mage outlives the party she saved the world with, and sets out to understand the people she never bothered to know.", next: { num: 15, date: "18 Nov 2026" } },
-  { id: "yotsuba", title: "Yotsuba&!", jp: "よつばと！", author: "Kiyohiko Azuma", publisher: "Kadokawa", en: "Yen Press", genres: ["Comedy", "Slice of Life"], volumes: 16, enVols: 15, status: "Ongoing", year: 2003, color: "#78864A", blurb: "A very small green-haired girl discovers doorbells, cicadas, air conditioning and the ocean, in roughly that order.", next: { num: 17, date: "5 Dec 2026" } },
-  { id: "koe", title: "A Silent Voice", jp: "聲の形", author: "Yoshitoki Ōima", publisher: "Kodansha", en: "Kodansha USA", genres: ["Drama", "Romance"], volumes: 7, enVols: 7, status: "Completed", year: 2013, color: "#6A7A86", blurb: "The boy who bullied a deaf classmate out of school finds her again six years later, and tries to learn her language.", next: null },
+  { id: "witch", title: "Witch Hat Atelier", jp: "とんがり帽子のアトリエ", author: "Kamome Shirahama", publisher: "Kodansha", en: "Kodansha USA", genres: ["Fantasy", "Adventure"], volumes: 13, enVols: 12, status: "Ongoing", year: 2016, color: "#625589", blurb: "In a world where magic is performed by drawing glyphs, young Coco discovers a forbidden truth about sorcery and is taken as an apprentice by the mysterious witch Qifrey. She must master the craft while hiding the secret of how she learned it.", next: { num: 14, date: "24 Sep 2026" } },
+  { id: "kaguya", title: "Kaguya-sama: Love Is War", jp: "かぐや様は告らせたい", author: "Aka Akasaka", publisher: "Shueisha", en: "Viz Media", genres: ["Romance", "Comedy"], volumes: 28, enVols: 28, status: "Completed", year: 2015, color: "#95606D", blurb: "Student council president Miyuki Shirogane and vice president Kaguya Shinomiya are both too proud to confess their feelings. Every encounter becomes an elaborate psychological battle to make the other person say \"I love you\" first.", next: null },
+  { id: "dungeon", title: "Delicious in Dungeon", jp: "ダンジョン飯", author: "Ryoko Kui", publisher: "Kadokawa", en: "Yen Press", genres: ["Fantasy", "Comedy", "Adventure"], volumes: 14, enVols: 14, status: "Completed", year: 2014, color: "#86682F", blurb: "When his sister is devoured by a dragon deep in a dungeon, Laios leads his party back down to rescue her — but they're broke and starving. His solution: cook and eat the monsters they fight along the way.", next: null },
+  { id: "frieren", title: "Frieren: Beyond Journey's End", jp: "葬送のフリーレン", author: "Kanehito Yamada", publisher: "Shogakukan", en: "Viz Media", genres: ["Fantasy", "Adventure", "Drama"], volumes: 14, enVols: 12, status: "Ongoing", year: 2020, color: "#487872", blurb: "After the hero's party defeats the Demon King, the elven mage Frieren realises she barely knew her companions who have now grown old and died. She sets out on a new journey to understand human emotions and the meaning of the connections she overlooked.", next: { num: 15, date: "18 Nov 2026" } },
+  { id: "yotsuba", title: "Yotsuba&!", jp: "よつばと！", author: "Kiyohiko Azuma", publisher: "Kadokawa", en: "Yen Press", genres: ["Comedy", "Slice of Life"], volumes: 16, enVols: 15, status: "Ongoing", year: 2003, color: "#78864A", blurb: "Five-year-old Yotsuba Koiwai experiences everyday life — from swings to fishing to rainy days — with boundless curiosity and enthusiasm after moving to a new neighbourhood with her adoptive father.", next: { num: 17, date: "5 Dec 2026" } },
+  { id: "koe", title: "A Silent Voice", jp: "聲の形", author: "Yoshitoki Ōima", publisher: "Kodansha", en: "Kodansha USA", genres: ["Drama", "Romance"], volumes: 7, enVols: 7, status: "Completed", year: 2013, color: "#6A7A86", blurb: "Shoya Ishida tormented his deaf classmate Shoko Nishimiya in elementary school until she transferred away. Years later, isolated and full of guilt, he seeks her out to make amends and learn to connect with the people around him.", next: null },
 
   { id: "berserk", title: "Berserk", jp: "ベルセルク", author: "Kentaro Miura", publisher: "Hakusensha", en: "Dark Horse", genres: ["Dark Fantasy", "Action", "Horror"], volumes: 43, enVols: 42, status: "Ongoing", year: 1989, color: "#463D35", blurb: "Guts, a lone mercenary branded with a mark that attracts demons, wields an enormous sword as he battles his way through a dark medieval world — driven by rage against his former comrade Griffith, who sacrificed their companions for godhood.", next: { num: 44, date: "27 Oct 2026" } },
-  { id: "lotl", title: "Land of the Lustrous", jp: "宝石の国", author: "Haruko Ichikawa", publisher: "Kodansha", en: "Kodansha USA", genres: ["Fantasy", "Sci-Fi", "Drama"], volumes: 13, enVols: 13, status: "Completed", year: 2012, color: "#51707E", blurb: "Immortal gem people defend their shore from moon-dwellers who want to grind them into ornaments.", next: null },
-  { id: "punpun", title: "Goodnight Punpun", jp: "おやすみプンプン", author: "Inio Asano", publisher: "Shogakukan", en: "Viz Media", genres: ["Drama", "Psychological"], volumes: 7, enVols: 7, status: "Completed", year: 2007, color: "#5C6757", blurb: "A boy drawn as a small bird grows up in a Japan that keeps not ending. Collected in seven two-in-one volumes.", next: null },
+  { id: "lotl", title: "Land of the Lustrous", jp: "宝石の国", author: "Haruko Ichikawa", publisher: "Kodansha", en: "Kodansha USA", genres: ["Fantasy", "Sci-Fi", "Drama"], volumes: 13, enVols: 13, status: "Completed", year: 2012, color: "#51707E", blurb: "Crystalline beings called Gems live on a lonely shore, defending themselves against Lunarians who shatter and abduct them for jewellery. Phosphophyllite, the youngest and most fragile, searches for a role to fill — and is gradually transformed by what they find.", next: null },
+  { id: "punpun", title: "Goodnight Punpun", jp: "おやすみプンプン", author: "Inio Asano", publisher: "Shogakukan", en: "Viz Media", genres: ["Drama", "Psychological"], volumes: 7, enVols: 7, status: "Completed", year: 2007, color: "#5C6757", blurb: "Punpun Onodera, depicted as a simple bird-like sketch in an otherwise realistic world, grows from childhood through adolescence in suburban Japan. What begins as comedy darkens steadily into one of manga's most unflinching portraits of depression and obsession.", next: null },
   { id: "spy", title: "Spy × Family", jp: "スパイファミリー", author: "Tatsuya Endo", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Comedy", "Slice of Life"], volumes: 15, enVols: 13, status: "Ongoing", year: 2019, color: "#86606E", blurb: "Master spy Twilight must build a fake family to infiltrate a target — but his adopted daughter can read minds and his wife is a secret assassin, and none of them know the others' true identities.", next: { num: 16, date: "4 Sep 2026" } },
-  { id: "oshi", title: "Oshi no Ko", jp: "推しの子", author: "Aka Akasaka", publisher: "Shueisha", en: "Yen Press", genres: ["Drama", "Psychological", "Mystery"], volumes: 16, enVols: 15, status: "Completed", year: 2020, color: "#755477", blurb: "A doctor is reborn as the son of the idol he adored, and grows up inside the industry that killed her.", next: null },
-  { id: "dandadan", title: "Dandadan", jp: "ダンダダン", author: "Yukinobu Tatsu", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Comedy", "Supernatural"], volumes: 19, enVols: 16, status: "Ongoing", year: 2021, color: "#4B6688", blurb: "She believes in aliens, he believes in ghosts, and they are both about to be extremely correct.", next: { num: 20, date: "20 Oct 2026" } },
-  { id: "bluelock", title: "Blue Lock", jp: "ブルーロック", author: "Muneyuki Kaneshiro", publisher: "Kodansha", en: "Kodansha USA", genres: ["Sports", "Drama", "Action"], volumes: 32, enVols: 27, status: "Ongoing", year: 2018, color: "#3D5867", blurb: "Japan locks up three hundred strikers in a facility to manufacture one perfect egoist.", next: { num: 33, date: "9 Sep 2026" } },
-  { id: "akira", title: "Akira", jp: "アキラ", author: "Katsuhiro Otomo", publisher: "Kodansha", en: "Kodansha USA", genres: ["Sci-Fi", "Action", "Cyberpunk"], volumes: 6, enVols: 6, status: "Completed", year: 1982, color: "#9C513E", blurb: "Neo-Tokyo is rebuilt on the crater of the last psychic, and a biker gang kid starts showing the same symptoms.", next: null },
-  { id: "c20th", title: "20th Century Boys", jp: "20世紀少年", author: "Naoki Urasawa", publisher: "Shogakukan", en: "Viz Media", genres: ["Mystery", "Sci-Fi", "Thriller"], volumes: 22, enVols: 22, status: "Completed", year: 1999, color: "#665847", blurb: "A cult is following the doomsday plan a group of children invented in a field in 1969.", next: null },
-  { id: "sakamoto", title: "Sakamoto Days", jp: "サカモトデイズ", author: "Yuto Suzuki", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Comedy"], volumes: 22, enVols: 19, status: "Ongoing", year: 2020, color: "#4A6353", blurb: "The greatest hitman alive retired to run a corner shop, and the profession would like a word.", next: { num: 23, date: "1 Dec 2026" } },
+  { id: "oshi", title: "Oshi no Ko", jp: "推しの子", author: "Aka Akasaka", publisher: "Shueisha", en: "Yen Press", genres: ["Drama", "Psychological", "Mystery"], volumes: 16, enVols: 15, status: "Completed", year: 2020, color: "#755477", blurb: "A doctor who loved the idol Ai Hoshino is reborn as her son, Aqua. After Ai is murdered, Aqua infiltrates the entertainment industry to find the person responsible — while his twin sister Ruby chases her own path to stardom.", next: null },
+  { id: "dandadan", title: "Dandadan", jp: "ダンダダン", author: "Yukinobu Tatsu", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Comedy", "Supernatural"], volumes: 19, enVols: 16, status: "Ongoing", year: 2021, color: "#4B6688", blurb: "When occult-obsessed Momo and alien-believer Okarun make a bet to prove each other wrong, they both end up being right — and cursed. Now bound together by supernatural forces, they fight off spirits and extraterrestrials in increasingly chaotic battles.", next: { num: 20, date: "20 Oct 2026" } },
+  { id: "bluelock", title: "Blue Lock", jp: "ブルーロック", author: "Muneyuki Kaneshiro", publisher: "Kodansha", en: "Kodansha USA", genres: ["Sports", "Drama", "Action"], volumes: 32, enVols: 27, status: "Ongoing", year: 2018, color: "#3D5867", blurb: "After Japan's humiliating World Cup defeat, three hundred young strikers are locked in a facility called Blue Lock. The goal: forge the most ruthlessly selfish striker in the world through a Darwinian elimination program.", next: { num: 33, date: "9 Sep 2026" } },
+  { id: "akira", title: "Akira", jp: "アキラ", author: "Katsuhiro Otomo", publisher: "Kodansha", en: "Kodansha USA", genres: ["Sci-Fi", "Action", "Cyberpunk"], volumes: 6, enVols: 6, status: "Completed", year: 1982, color: "#9C513E", blurb: "In post-apocalyptic Neo-Tokyo, biker gang member Tetsuo Shima develops terrifying psychic powers linked to Akira, the mysterious force that destroyed the original city. His friend Kaneda races to stop him before history repeats itself.", next: null },
+  { id: "c20th", title: "20th Century Boys", jp: "20世紀少年", author: "Naoki Urasawa", publisher: "Shogakukan", en: "Viz Media", genres: ["Mystery", "Sci-Fi", "Thriller"], volumes: 22, enVols: 22, status: "Completed", year: 1999, color: "#665847", blurb: "Convenience store owner Kenji Endo discovers that a mysterious cult leader called \"Friend\" is carrying out a plan to destroy the world — one that Kenji and his childhood friends invented as a game decades ago. He must uncover Friend's identity to stop the prophecy.", next: null },
+  { id: "sakamoto", title: "Sakamoto Days", jp: "サカモトデイズ", author: "Yuto Suzuki", publisher: "Shueisha", en: "Viz Media", genres: ["Action", "Comedy"], volumes: 22, enVols: 19, status: "Ongoing", year: 2020, color: "#4A6353", blurb: "Taro Sakamoto was the greatest hitman in the underworld until he fell in love, retired, and gained weight running a neighbourhood store. Now assassins from his past keep showing up — and he handles them with the same terrifying skill, just while stocking shelves.", next: { num: 23, date: "1 Dec 2026" } },
 
-  { id: "vagabond", title: "Vagabond", jp: "バガボンド", author: "Takehiko Inoue", publisher: "Kodansha", en: "Viz Media", genres: ["Historical", "Drama", "Action"], volumes: 37, enVols: 37, status: "On hiatus", year: 1998, color: "#6B5B45", blurb: "Miyamoto Musashi walks out of a losing battle and spends the rest of his life trying to work out what strength is for.", next: null },
+  { id: "vagabond", title: "Vagabond", jp: "バガボンド", author: "Takehiko Inoue", publisher: "Kodansha", en: "Viz Media", genres: ["Historical", "Drama", "Action"], volumes: 37, enVols: 37, status: "On hiatus", year: 1998, color: "#6B5B45", blurb: "A fictionalised retelling of swordsman Miyamoto Musashi's life, from a wild teenager who survives the Battle of Sekigahara to a wandering duelist searching for the meaning of true strength across Edo-period Japan.", next: null },
   { id: "souleater", title: "Soul Eater", jp: "ソウルイーター", author: "Atsushi Ōkubo", publisher: "Square Enix", en: "Yen Press", genres: ["Action", "Comedy", "Supernatural"], volumes: 25, enVols: 25, status: "Completed", year: 2004, color: "#4A4560", blurb: "At Death Weapon Meister Academy, students who can transform into weapons are paired with meisters. Together they must collect the souls of 99 evil humans and one witch to create a Death Scythe worthy of the Grim Reaper himself.", next: null },
 
   // ---- collected editions: same work, different physical product, its own
@@ -83,9 +83,9 @@ const SERIES = [
 const EXTRA = [
   ["onepiece", null, null, null, "One Piece", "ワンピース", "Eiichiro Oda", "Shueisha", "Viz Media", "Action|Adventure|Comedy", 115, 112, "Ongoing", 1997, "#B4703A", "Monkey D. Luffy and his crew sail the Grand Line in search of the legendary treasure, the One Piece, to become King of the Pirates.", [113]],
   ["onepiece-omni", "onepiece", "3-in-1 Omnibus", "3-in-1", "One Piece", "ワンピース", "Eiichiro Oda", "Shueisha", "Viz Media", "Action|Adventure|Comedy", 34, 34, "Ongoing", 2009, "#A5622F", "Three volumes a book. The only sane way to start 110 volumes late."],
-  ["naruto", null, null, null, "Naruto", "ナルト", "Masashi Kishimoto", "Shueisha", "Viz Media", "Action|Adventure", 72, 72, "Completed", 1999, "#B96A34", "An outcast ninja with a fox sealed inside him wants the village's top job."],
+  ["naruto", null, null, null, "Naruto", "ナルト", "Masashi Kishimoto", "Shueisha", "Viz Media", "Action|Adventure", 72, 72, "Completed", 1999, "#B96A34", "Naruto Uzumaki, a young ninja shunned by his village for the dangerous fox spirit sealed inside him, dreams of becoming Hokage. Through gruelling training and fierce battles, he fights to earn the recognition of everyone around him."],
   ["naruto-omni", "naruto", "3-in-1 Omnibus", "3-in-1", "Naruto", "ナルト", "Masashi Kishimoto", "Shueisha", "Viz Media", "Action|Adventure", 24, 24, "Completed", 2011, "#A85E2C", "Twenty-four books instead of seventy-two, at roughly half the price."],
-  ["bleach", null, null, null, "Bleach", "ブリーチ", "Tite Kubo", "Shueisha", "Viz Media", "Action|Supernatural", 74, 74, "Completed", 2001, "#5B6675", "A teenager who sees ghosts inherits a soul reaper's sword and her whole job."],
+  ["bleach", null, null, null, "Bleach", "ブリーチ", "Tite Kubo", "Shueisha", "Viz Media", "Action|Supernatural", 74, 74, "Completed", 2001, "#5B6675", "When high schooler Ichigo Kurosaki gains the powers of a Soul Reaper from Rukia Kuchiki, he is thrust into the afterlife's battles — defending the living from malevolent spirits called Hollows while uncovering the conspiracies within the Soul Society."],
   ["bleach-omni", "bleach", "3-in-1 Omnibus", "3-in-1", "Bleach", "ブリーチ", "Tite Kubo", "Shueisha", "Viz Media", "Action|Supernatural", 25, 25, "Completed", 2011, "#4F5A69", "The Soul Society arc in eight books rather than twenty-four."],
   ["dragonball", null, null, null, "Dragon Ball", "ドラゴンボール", "Akira Toriyama", "Shueisha", "Viz Media", "Action|Adventure|Comedy", 42, 42, "Completed", 1984, "#C08A32", "Son Goku trains in martial arts from childhood through adulthood, defending Earth against increasingly powerful enemies while searching for the seven Dragon Balls."],
   ["dragonball-fc", "dragonball", "Full Color Edition", "Full colour", "Dragon Ball", "ドラゴンボール", "Akira Toriyama", "Shueisha", "Viz Media", "Action|Adventure|Comedy", 20, 20, "Ongoing", 2013, "#C99A3C", "Every page recoloured, arc by arc. Expensive and worth it."],
@@ -96,40 +96,40 @@ const EXTRA = [
   ["fma-fullmetal", "fma", "Fullmetal Edition", "Hardcover 2-in-1", "Fullmetal Alchemist", "鋼の錬金術師", "Hiromu Arakawa", "Square Enix", "Viz Media", "Action|Adventure|Fantasy", 20, 20, "Completed", 2018, "#7C5C38", "Oversized hardcovers with restored colour pages and new jackets."],
   ["aot", null, null, null, "Attack on Titan", "進撃の巨人", "Hajime Isayama", "Kodansha", "Kodansha USA", "Action|Dark Fantasy|Drama", 34, 34, "Completed", 2009, "#6B6350", "After Titans breach the walls protecting the last remnants of humanity, young Eren Jaeger vows to exterminate them all. As he joins the military, he discovers the truth about the Titans is far more complex than anyone imagined."],
   ["aot-colossal", "aot", "Colossal Edition", "5-in-1", "Attack on Titan", "進撃の巨人", "Hajime Isayama", "Kodansha", "Kodansha USA", "Action|Dark Fantasy|Drama", 7, 7, "Completed", 2014, "#5C5647", "Five volumes a book. Heavy enough to be a doorstop."],
-  ["sailormoon", null, null, null, "Sailor Moon", "美少女戦士セーラームーン", "Naoko Takeuchi", "Kodansha", "Kodansha USA", "Fantasy|Romance|Action", 12, 12, "Completed", 1991, "#9A6484", "The blueprint for every magical girl series since."],
+  ["sailormoon", null, null, null, "Sailor Moon", "美少女戦士セーラームーン", "Naoko Takeuchi", "Kodansha", "Kodansha USA", "Fantasy|Romance|Action", 12, 12, "Completed", 1991, "#9A6484", "Usagi Tsukino, a clumsy middle schooler, discovers she is the reborn warrior Sailor Moon. With her fellow Guardians, she fights the forces of evil threatening Earth while searching for the lost princess of the Moon Kingdom."],
   ["sailormoon-eternal", "sailormoon", "Eternal Edition", "Oversized", "Sailor Moon", "美少女戦士セーラームーン", "Naoko Takeuchi", "Kodansha", "Kodansha USA", "Fantasy|Romance|Action", 10, 10, "Completed", 2018, "#8D5A79", "Larger trim, foil covers, colour pages restored."],
-  ["fruitsbasket", null, null, null, "Fruits Basket", "フルーツバスケット", "Natsuki Takaya", "Hakusensha", "Yen Press", "Romance|Drama|Comedy", 23, 23, "Completed", 1998, "#7E8A63", "A family cursed to turn into the zodiac, and the girl who won't leave."],
+  ["fruitsbasket", null, null, null, "Fruits Basket", "フルーツバスケット", "Natsuki Takaya", "Hakusensha", "Yen Press", "Romance|Drama|Comedy", 23, 23, "Completed", 1998, "#7E8A63", "Orphaned Tohru Honda moves in with the mysterious Soma family and discovers their secret: thirteen members transform into animals of the Chinese zodiac when embraced. As she grows close to them, she uncovers the dark hold the family patriarch has on them all."],
   ["fruitsbasket-collectors", "fruitsbasket", "Collector's Edition", "2-in-1", "Fruits Basket", "フルーツバスケット", "Natsuki Takaya", "Hakusensha", "Yen Press", "Romance|Drama|Comedy", 12, 12, "Completed", 2016, "#71805A", "Twelve books with new covers and colour inserts."],
-  ["nausicaa", null, null, null, "Nausicaä of the Valley of the Wind", "風の谷のナウシカ", "Hayao Miyazaki", "Tokuma Shoten", "Viz Media", "Fantasy|Sci-Fi|Adventure", 7, 7, "Completed", 1982, "#6E7F5C", "Miyazaki's own manga, denser and bleaker than the film."],
+  ["nausicaa", null, null, null, "Nausicaä of the Valley of the Wind", "風の谷のナウシカ", "Hayao Miyazaki", "Tokuma Shoten", "Viz Media", "Fantasy|Sci-Fi|Adventure", 7, 7, "Completed", 1982, "#6E7F5C", "In a post-apocalyptic world overrun by a toxic jungle and giant insects, Princess Nausicaä of the Valley of the Wind seeks a path to coexistence between humanity and nature — even as warring nations threaten to destroy what little remains."],
   ["nausicaa-box", "nausicaa", "Deluxe Box Set", "2-volume box", "Nausicaä of the Valley of the Wind", "風の谷のナウシカ", "Hayao Miyazaki", "Tokuma Shoten", "Viz Media", "Fantasy|Sci-Fi|Adventure", 2, 2, "Completed", 2012, "#61735A", "Two hardcovers in a slipcase, with a poster nobody hangs."],
-  ["botim", null, null, null, "Blade of the Immortal", "無限の住人", "Hiroaki Samura", "Kodansha", "Dark Horse", "Historical|Action|Drama", 31, 31, "Completed", 1993, "#5A5150", "An immortal swordsman owes a girl a hundred heads."],
+  ["botim", null, null, null, "Blade of the Immortal", "無限の住人", "Hiroaki Samura", "Kodansha", "Dark Horse", "Historical|Action|Drama", 31, 31, "Completed", 1993, "#5A5150", "Manji, a swordsman cursed with immortality, agrees to serve as bodyguard for young Rin as she hunts the sword school that murdered her parents. He must kill one thousand evil men to lift his curse — and Rin's list is a start."],
   ["botim-deluxe", "botim", "Deluxe Edition", "3-in-1 hardcover", "Blade of the Immortal", "無限の住人", "Hiroaki Samura", "Kodansha", "Dark Horse", "Historical|Action|Drama", 10, 10, "Completed", 2018, "#4E4645", "Right-to-left at last, on better paper, in hardcover."],
-  ["lonewolf", null, null, null, "Lone Wolf and Cub", "子連れ狼", "Kazuo Koike", "Shogakukan", "Dark Horse", "Historical|Drama|Action", 28, 28, "Completed", 1970, "#6A5F4E", "A disgraced executioner walks the assassin's road with his infant son."],
+  ["lonewolf", null, null, null, "Lone Wolf and Cub", "子連れ狼", "Kazuo Koike", "Shogakukan", "Dark Horse", "Historical|Drama|Action", 28, 28, "Completed", 1970, "#6A5F4E", "Ogami Itto, the former Shogun's executioner, is framed and cast out. He takes his infant son Daigoro in a baby cart and walks the road of vengeance as an assassin for hire, cutting through the conspiracy that destroyed his family."],
   ["lonewolf-omni", "lonewolf", "Omnibus Edition", "3-in-1", "Lone Wolf and Cub", "子連れ狼", "Kazuo Koike", "Shogakukan", "Dark Horse", "Historical|Drama|Action", 12, 12, "Completed", 2013, "#5D5344", "Twelve fat paperbacks instead of twenty-eight small ones."],
-  ["alita", null, null, null, "Battle Angel Alita", "銃夢", "Yukito Kishiro", "Shueisha", "Kodansha USA", "Sci-Fi|Action|Cyberpunk", 9, 9, "Completed", 1990, "#4F6270", "A cyborg pulled from a scrapheap turns out to be a weapon."],
+  ["alita", null, null, null, "Battle Angel Alita", "銃夢", "Yukito Kishiro", "Shueisha", "Kodansha USA", "Sci-Fi|Action|Cyberpunk", 9, 9, "Completed", 1990, "#4F6270", "A cybernetics doctor finds the remains of a female cyborg in a scrapyard beneath a floating city. Rebuilt and named Alita, she has no memory of her past — but her body remembers a devastating martial art, and the truth of who she was draws ever closer."],
   ["alita-deluxe", "alita", "Deluxe Edition", "2-in-1 hardcover", "Battle Angel Alita", "銃夢", "Yukito Kishiro", "Shueisha", "Kodansha USA", "Sci-Fi|Action|Cyberpunk", 6, 6, "Completed", 2017, "#465966", "Hardcover, larger trim, the better translation."],
-  ["gits", null, null, null, "Ghost in the Shell", "攻殻機動隊", "Masamune Shirow", "Kodansha", "Kodansha USA", "Sci-Fi|Cyberpunk|Action", 3, 3, "Completed", 1989, "#3F5C63", "Dense, footnoted cyberpunk that the films simplified."],
+  ["gits", null, null, null, "Ghost in the Shell", "攻殻機動隊", "Masamune Shirow", "Kodansha", "Kodansha USA", "Sci-Fi|Cyberpunk|Action", 3, 3, "Completed", 1989, "#3F5C63", "In a near-future Japan where cybernetic enhancement is routine, Major Motoko Kusanagi leads a covert counter-cyberterrorism unit. As she hunts a mysterious hacker known as the Puppet Master, she begins questioning the nature of her own consciousness and identity."],
   ["gits-deluxe", "gits", "Deluxe Edition", "Hardcover", "Ghost in the Shell", "攻殻機動隊", "Masamune Shirow", "Kodansha", "Kodansha USA", "Sci-Fi|Cyberpunk|Action", 3, 3, "Completed", 2017, "#375157", "Hardcover reissues with the colour pages back where they belong."],
-  ["kenshin", null, null, null, "Rurouni Kenshin", "るろうに剣心", "Nobuhiro Watsuki", "Shueisha", "Viz Media", "Historical|Action|Drama", 28, 28, "Completed", 1994, "#8A5057", "A wandering swordsman who has sworn off killing keeps being asked to."],
+  ["kenshin", null, null, null, "Rurouni Kenshin", "るろうに剣心", "Nobuhiro Watsuki", "Shueisha", "Viz Media", "Historical|Action|Drama", 28, 28, "Completed", 1994, "#8A5057", "In the early Meiji era, former assassin Kenshin Himura wanders Japan carrying a reverse-blade sword as penance for the lives he took. When he settles at a kendo school in Tokyo, his violent past keeps catching up with him."],
   ["kenshin-omni", "kenshin", "3-in-1 Omnibus", "3-in-1", "Rurouni Kenshin", "るろうに剣心", "Nobuhiro Watsuki", "Shueisha", "Viz Media", "Historical|Action|Drama", 9, 9, "Completed", 2017, "#7D474E", "The whole series in nine books."],
-  ["inuyasha", null, null, null, "Inuyasha", "犬夜叉", "Rumiko Takahashi", "Shogakukan", "Viz Media", "Fantasy|Adventure|Romance", 56, 56, "Completed", 1996, "#6A7A88", "A schoolgirl falls down a well into the Sengoku era."],
+  ["inuyasha", null, null, null, "Inuyasha", "犬夜叉", "Rumiko Takahashi", "Shogakukan", "Viz Media", "Fantasy|Adventure|Romance", 56, 56, "Completed", 1996, "#6A7A88", "Kagome Higurashi falls through a magical well into Japan's feudal era, where she frees and reluctantly partners with the half-demon Inuyasha. Together they hunt the shards of the shattered Shikon Jewel before they fall into the wrong hands."],
   ["inuyasha-vizbig", "inuyasha", "VIZBIG Edition", "3-in-1", "Inuyasha", "犬夜叉", "Rumiko Takahashi", "Shogakukan", "Viz Media", "Fantasy|Adventure|Romance", 19, 19, "Completed", 2009, "#5F6E7B", "Nineteen large-format books, colour pages included."],
   ["kagurabachi", null, null, null, "Kagurabachi", "カグラバチ", "Takeru Hokazono", "Shueisha", "Viz Media", "Action|Fantasy", 12, 8, "Ongoing", 2023, "#4A3D5E", "After his swordsmith father is murdered for the enchanted blades he forged, Chihiro Rokuhira takes up one of the swords to hunt down the killers.", [9, 10]],
   ["mamayuyu", null, "Japanese Import", null, "MamaYuyu", "魔々勇々", "Yoshihiko Hayashi", "Shueisha", "Viz Media", "Action|Fantasy", 4, 0, "Completed", 2023, "#6B4A72", "In a world at peace between hero and demon lord, the hero Corleo is confronted by invaders from another world who shatter the fragile harmony."],
-  ["hxh", null, null, null, "Hunter × Hunter", "ハンター×ハンター", "Yoshihiro Togashi", "Shueisha", "Viz Media", "Action|Adventure|Fantasy", 38, 38, "On hiatus", 1998, "#4C7360", "A boy hunts for his father through the most elaborate rule-set in shonen."],
-  ["pluto", null, null, null, "Pluto", "プルートウ", "Naoki Urasawa", "Shogakukan", "Viz Media", "Sci-Fi|Mystery|Drama", 8, 8, "Completed", 2003, "#4A5566", "Urasawa retells Tezuka's Astro Boy as a murder investigation."],
-  ["uzumaki", null, null, null, "Uzumaki", "うずまき", "Junji Ito", "Shogakukan", "Viz Media", "Horror|Mystery", 3, 3, "Completed", 1998, "#57545C", "A town infected by the shape of a spiral."],
+  ["hxh", null, null, null, "Hunter × Hunter", "ハンター×ハンター", "Yoshihiro Togashi", "Shueisha", "Viz Media", "Action|Adventure|Fantasy", 38, 38, "On hiatus", 1998, "#4C7360", "Gon Freecss discovers his absent father is a legendary Hunter — an elite license-holder with access to restricted places, information, and bounties. He takes the brutal Hunter Exam and enters a world of escalating danger to find him."],
+  ["pluto", null, null, null, "Pluto", "プルートウ", "Naoki Urasawa", "Shogakukan", "Viz Media", "Sci-Fi|Mystery|Drama", 8, 8, "Completed", 2003, "#4A5566", "Inspector Gesicht, one of the world's most advanced robots, investigates the serial murder of the seven most powerful robots on Earth. A reimagining of Osamu Tezuka's Astro Boy arc, told as a slow-burn detective thriller."],
+  ["uzumaki", null, null, null, "Uzumaki", "うずまき", "Junji Ito", "Shogakukan", "Viz Media", "Horror|Mystery", 3, 3, "Completed", 1998, "#57545C", "In the small coastal town of Kurouzu-cho, an unexplainable obsession with spirals begins infecting the residents. What starts as odd behaviour escalates into body horror as the spiral pattern warps everything — people, buildings, and reality itself."],
   ["uzumaki-hc", "uzumaki", "Deluxe Hardcover", "3-in-1 hardcover", "Uzumaki", "うずまき", "Junji Ito", "Shogakukan", "Viz Media", "Horror|Mystery", 1, 1, "Completed", 2013, "#4B4850", "All three volumes in one hardcover, and the one to own."],
-  ["slamdunk", null, null, null, "Slam Dunk", "スラムダンク", "Takehiko Inoue", "Shueisha", "Viz Media", "Sports|Comedy|Drama", 31, 31, "Completed", 1990, "#9A5340", "A delinquent joins the basketball team to impress a girl. It works out."],
-  ["tokyoghoul", null, null, null, "Tokyo Ghoul", "東京喰種", "Sui Ishida", "Shueisha", "Viz Media", "Horror|Action|Psychological", 14, 14, "Completed", 2011, "#4B4550", "A student survives a transplant and wakes up needing to eat people."],
+  ["slamdunk", null, null, null, "Slam Dunk", "スラムダンク", "Takehiko Inoue", "Shueisha", "Viz Media", "Sports|Comedy|Drama", 31, 31, "Completed", 1990, "#9A5340", "Hanamichi Sakuragi, a hot-tempered delinquent, joins his high school basketball team to impress a girl — but discovers a genuine talent and passion for the sport. His team of misfits aims for the national championship."],
+  ["tokyoghoul", null, null, null, "Tokyo Ghoul", "東京喰種", "Sui Ishida", "Shueisha", "Viz Media", "Horror|Action|Psychological", 14, 14, "Completed", 2011, "#4B4550", "College student Ken Kaneki is transformed into a half-ghoul after a chance encounter — part human, part flesh-eating creature. Trapped between two worlds, he struggles to hold onto his humanity while navigating Tokyo's hidden ghoul society."],
   ["c20th-perfect", "c20th", "Perfect Edition", "2-in-1", "20th Century Boys", "20世紀少年", "Naoki Urasawa", "Shogakukan", "Viz Media", "Mystery|Sci-Fi|Thriller", 11, 11, "Completed", 2018, "#5E5142", "Eleven books, including the 21st Century Boys coda."],
-  ["ccs", null, null, null, "Cardcaptor Sakura", "カードキャプターさくら", "CLAMP", "Kodansha", "Kodansha USA", "Fantasy|Romance|Comedy", 12, 12, "Completed", 1996, "#8E6A84", "A girl scatters a deck of magic cards and has to fetch them all back."],
+  ["ccs", null, null, null, "Cardcaptor Sakura", "カードキャプターさくら", "CLAMP", "Kodansha", "Kodansha USA", "Fantasy|Romance|Comedy", 12, 12, "Completed", 1996, "#8E6A84", "Ten-year-old Sakura Kinomoto accidentally releases a set of magical Clow Cards from a mysterious book. Appointed Cardcaptor by the guardian beast Kero, she must recapture each card before they cause chaos — while juggling school and a budding crush."],
   ["ccs-collectors", "ccs", "Collector's Edition", "Hardcover", "Cardcaptor Sakura", "カードキャプターさくら", "CLAMP", "Kodansha", "Kodansha USA", "Fantasy|Romance|Comedy", 9, 9, "Completed", 2019, "#815E77", "Hardcover, larger, with all the colour art CLAMP drew for it."],
   ["nana", null, null, null, "Nana", "ナナ", "Ai Yazawa", "Shueisha", "Viz Media", "Romance|Drama|Music", 21, 21, "On hiatus", 2000, "#8E4A5E", "Two young women named Nana — one a punk vocalist chasing stardom, the other a small-town girl chasing love — share an apartment in Tokyo as their lives become deeply intertwined."],
-  ["kimi", null, null, null, "Kimi ni Todoke", "君に届け", "Karuho Shiina", "Shueisha", "Viz Media", "Romance|Drama|Slice of Life", 30, 30, "Completed", 2005, "#A46A80", "A girl everyone mistakes for a ghost story is befriended by the most popular boy in school."],
+  ["kimi", null, null, null, "Kimi ni Todoke", "君に届け", "Karuho Shiina", "Shueisha", "Viz Media", "Romance|Drama|Slice of Life", 30, 30, "Completed", 2005, "#A46A80", "Sawako Kuronuma's resemblance to a horror-movie ghost has left her friendless and misunderstood. When the popular and genuinely kind Shota Kazehaya reaches out to her, she begins slowly opening up and making real connections for the first time."],
   ["vagabond-definitive", "vagabond", "Definitive Edition", "Hardcover", "Vagabond", "バガボンド", "Takehiko Inoue", "Kodansha", "Viz Media", "Historical|Drama|Action", 5, 5, "Ongoing", 2025, "#5A4A38", "The newest English release — hardcover volumes, each covering roughly three of the original tankōbon."],
   ["vagabond-perfect", "vagabond", "Definitive Edition", "Kanzenban hardcover", "Vagabond", "バガボンド", "Takehiko Inoue", "Kodansha", "Viz Media", "Historical|Drama|Action", 22, 22, "Completed", 2013, "#8A6A44", "The 完全版 reissue: larger trim, restored colour plates, twenty-two volumes."],
-  ["yyh", null, null, null, "Yu Yu Hakusho", "幽遊白書", "Yoshihiro Togashi", "Shueisha", "Viz Media", "Action|Supernatural|Comedy", 19, 19, "Completed", 1990, "#5C6E4E", "A delinquent dies saving a child and gets a job in the afterlife."],
+  ["yyh", null, null, null, "Yu Yu Hakusho", "幽遊白書", "Yoshihiro Togashi", "Shueisha", "Viz Media", "Action|Supernatural|Comedy", 19, 19, "Completed", 1990, "#5C6E4E", "Yusuke Urameshi, a teenage delinquent, is killed saving a child and is brought back to life as a Spirit Detective. Tasked by the ruler of the afterlife, he investigates supernatural threats in the human world alongside a growing team of allies."],
 ];
 SERIES.push(...EXTRA.map(([id, work, edition, format, title, jp, author, publisher, en, genres, volumes, enVols, status, year, color, blurb, preorder]) => ({
   id, work: work || id, edition: edition || "Standard", format: format || null,
@@ -179,7 +179,7 @@ function offerFor(country, series, vol, shop, isImport) {
   return {
     shop, price, currency, dec,
     stock: hash(shop + series.id + vol + "s") % 9 !== 0,
-    url: shopUrl(shop, { isbn: ISBN_FOR(series, vol), title: series.title, volume: vol, author: series.author, country }),
+    url: shopUrl(shop, { isbn: ISBN_FOR(series, vol), title: series.title, titleJp: series.jp, volume: vol, author: series.author, country }),
   };
 }
 function offersFor(country, series, vol) {
@@ -699,49 +699,88 @@ const ISBN_FOR = (series, vol) => VOLUME_ISBNS[series.id + ":" + vol] || null;
 const REAL_COVERS = new Map();      // "seriesId:vol" -> https URL
 function coverImage(series, vol) { return REAL_COVERS.get(series.id + ":" + vol) || null; }
 
-/** Volume titles are published as "One Piece, Vol. 61" almost universally. */
-function titleMatchesVolume(candidate, seriesTitle, vol) {
-  const norm = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-  const c = norm(candidate);
-  if (!c.startsWith(norm(seriesTitle).slice(0, 10))) return false;
-  const m = c.match(/vol(?:ume)?\s*(\d+)/) || c.match(/\b(\d{1,3})\b\s*$/);
-  return m ? Number(m[1]) === vol : false;
-}
-
 /**
- * Pulls the real cover art for a handful of volumes at runtime.
- * Google Books returns a thumbnail per ISBN and allows browser requests, so no
- * artwork is bundled — it's fetched from the source and falls straight back to
- * the generated art if the request fails or the volume isn't matched.
- * For production, do this once in ingest-covers.mjs and serve from your own R2
- * bucket instead: Google's terms limit how long you may cache their images.
+ * Fetches real cover art for a list of volumes using Open Library's cover API.
+ * The URL is completely predictable from the ISBN — no API call, no key, no
+ * rate limit. If Open Library doesn't have the cover, the URL returns a tiny
+ * 1-pixel image which we detect and skip.
+ *
+ * Open Library has significantly better manga cover coverage than Google Books,
+ * which frequently returns "image not available" placeholders for manga ISBNs.
  */
 function useRealCovers(picks) {
   const [, bump] = useState(0);
   useEffect(() => {
+    if (!picks || picks.length === 0) return;
     let cancelled = false;
     (async () => {
       for (const p of picks) {
+        if (cancelled) break;
         const key = p.id + ":" + p.vol;
         if (REAL_COVERS.has(key)) continue;
         const s = SERIES_BY_ID[p.id];
         if (!s) continue;
-        const q = `intitle:"${s.title}" ${p.vol}`;
+
+        const isbn = VOLUME_ISBNS[key];
+        if (!isbn) continue;   // no ISBN means no predictable cover URL
+
+        const url = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg`;
         try {
-          const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(q)}&maxResults=12&printType=books`);
+          // Open Library returns a 1x1 pixel image when it has no cover.
+          // A HEAD request lets us check Content-Length without downloading
+          // the full image — a real cover is always > 1000 bytes.
+          const res = await fetch(url, { method: "HEAD" });
           if (!res.ok) continue;
-          const data = await res.json();
-          const item = (data.items || []).find((it) =>
-            it.volumeInfo?.imageLinks?.thumbnail && titleMatchesVolume(it.volumeInfo.title || "", s.title, p.vol));
-          const url = item?.volumeInfo?.imageLinks?.thumbnail
-            ?.replace("http://", "https://").replace("&edge=curl", "").replace(/zoom=\d/, "zoom=3");
-          if (url && !cancelled) { REAL_COVERS.set(key, url); bump((v) => v + 1); }
-        } catch { /* offline or blocked — generated art stands in */ }
-        await new Promise((r) => setTimeout(r, 120));
+          const len = Number(res.headers.get("content-length") || 0);
+          if (len > 1000 && !cancelled) {
+            REAL_COVERS.set(key, url);
+            bump((v) => v + 1);
+          }
+        } catch { /* offline — generated art stands in */ }
+        await new Promise((r) => setTimeout(r, 80));   // gentle pacing
       }
     })();
     return () => { cancelled = true; };
   }, [picks]);
+}
+
+/**
+ * Loads volumes.json (produced by the ingest script) to populate ISBNs.
+ * This runs once at startup and makes coverImage() and buy links work
+ * for every volume the pipeline has matched.
+ */
+function useVolumesData() {
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch("/volumes.json");
+        if (!res.ok) return;   // file doesn't exist yet — that's fine pre-ingest
+        const vols = await res.json();
+        for (const v of vols) {
+          if (v.isbn13 && v.seriesId) {
+            VOLUME_ISBNS[v.seriesId + ":" + v.volume] = v.isbn13;
+          }
+        }
+      } catch { /* pre-ingest or offline — generated art is fine */ }
+    })();
+  }, []);
+}
+
+/**
+ * Builds a list of volumes to fetch covers for based on what's in the user's
+ * collection + whatever's shown on screen. Called inside App.
+ */
+function useCollectionCovers(collection) {
+  const picks = useMemo(() => {
+    const out = [];
+    for (const [id, entry] of Object.entries(collection)) {
+      if (!SERIES_BY_ID[id]) continue;
+      for (const vol of (entry.owned || [])) out.push({ id, vol });
+      for (const vol of (entry.wishlist || [])) out.push({ id, vol });
+    }
+    return out;
+  }, [collection]);
+  useRealCovers(picks);
 }
 
 const Cover = React.memo(function Cover({ s, vol, w, h, className = "", style = {} }) {
@@ -2365,26 +2404,37 @@ function ScanSheet({ collection, onAdd, onClose, notify }) {
     busyRef.current = false;
 
     const Detector = typeof window !== "undefined" && window.BarcodeDetector;
-    if (!Detector) {
-      setNote("This browser can't decode barcodes natively — ship the barcode-detector polyfill, or type the ISBN below.");
-      return;
-    }
-    const detector = new Detector({ formats: ["ean_13", "ean_8", "upc_a"] });
-    const tick = async () => {
-      if (busyRef.current || !videoRef.current) return;
+    const getDetector = async () => {
+      if (Detector) return new Detector({ formats: ["ean_13", "ean_8", "upc_a"] });
       try {
-        const codes = await detector.detect(videoRef.current);
-        const isbn = codes.map((c) => c.rawValue).find(isIsbn13);
-        if (isbn) {
-          if (navigator.vibrate) navigator.vibrate(40);
-          handleCode(isbn);
-          return;
-        }
-      } catch { /* a frame failed to decode; try the next one */ }
-      loopRef.current = setTimeout(tick, 220);
+        const { BarcodeDetector: Polyfill } = await import("barcode-detector");
+        return new Polyfill({ formats: ["ean_13", "ean_8", "upc_a"] });
+      } catch { return null; }
     };
-    tick();
-    return () => clearTimeout(loopRef.current);
+
+    let cancelled = false;
+    getDetector().then((detector) => {
+      if (cancelled || !detector) {
+        if (!cancelled) setNote("Couldn't load the barcode scanner. Type the ISBN below instead.");
+        return;
+      }
+      const tick = async () => {
+        if (busyRef.current || !videoRef.current || cancelled) return;
+        try {
+          const codes = await detector.detect(videoRef.current);
+          const isbn = codes.map((c) => c.rawValue).find(isIsbn13);
+          if (isbn) {
+            if (navigator.vibrate) navigator.vibrate(40);
+            handleCode(isbn);
+            return;
+          }
+        } catch { /* a frame failed to decode; try the next one */ }
+        loopRef.current = setTimeout(tick, 220);
+      };
+      tick();
+    });
+
+    return () => { cancelled = true; clearTimeout(loopRef.current); };
   }, [step, handleCode]);
 
   const close = () => { stopCamera(); onClose(); };
@@ -4247,6 +4297,11 @@ export default function App() {
   const [billing, setBilling] = useState({ interval: "yearly", renew: true, periodEnd: "" });
   const [exportOpen, setExportOpen] = useState(false);
   const [shelfOrder, setShelfOrder] = useState([]);
+
+  // Load ISBN data from volumes.json (produced by the ingest script)
+  useVolumesData();
+  // Fetch real covers from Google Books for volumes in the user's collection
+  useCollectionCovers(collection);
 
   /** Move `fromId` to sit where `toId` currently is. */
   const reorderShelf = useCallback((fromId, toId) => {

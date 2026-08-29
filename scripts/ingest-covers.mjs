@@ -38,6 +38,7 @@ import path from "node:path";
 
 const CACHE = ".ingest-cache.json";
 const OUT = "volumes.json";
+const PUBLIC_OUT = "public/volumes.json";  // Vite serves this as a static file
 const COVER_DIR = "covers";
 const GB_KEY = process.env.GOOGLE_BOOKS_KEY || "";
 const args = process.argv.slice(2);
@@ -367,7 +368,9 @@ async function main() {
   }
 
   await fs.writeFile(CACHE, JSON.stringify(cache, null, 2));
-  await fs.writeFile(OUT, JSON.stringify(out, null, 2));
+  const json = JSON.stringify(out, null, 2);
+  await fs.writeFile(OUT, json);
+  await fs.writeFile(PUBLIC_OUT, json).catch(() => {});   // public/ may not exist in CI
   await fs.writeFile("new-volumes.json", JSON.stringify(fresh, null, 2));
   if (seriesChanged) await fs.writeFile("series.json", JSON.stringify(series, null, 2));
 

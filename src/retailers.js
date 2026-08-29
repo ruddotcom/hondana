@@ -21,7 +21,7 @@
  */
 
 /** Shops that will ship a Japanese edition anywhere. */
-export const IMPORT_SHOPS = ["Kinokuniya", "Amazon JP", "CDJapan"];
+export const IMPORT_SHOPS = ["Amazon JP", "CDJapan"];
 
 /**
  * For series that never had a wider import network pick them up — usually a
@@ -226,8 +226,13 @@ const DIRECT_LINK = {
  * The outbound URL for one shop and one volume. Prefers the ISBN when we have
  * it, since that lands on the exact book rather than a series page.
  */
-export function shopUrl(shop, { isbn, title, volume, author, country } = {}) {
-  const q = encodeURIComponent(`${title || ""}${volume ? ` Vol. ${volume}` : ""}`.trim());
+export function shopUrl(shop, { isbn, title, titleJp, volume, author, country } = {}) {
+  // No "Vol." prefix — just "Jujutsu Kaisen 5" or "カグラバチ 6".
+  // Japanese shops get the Japanese title when available.
+  const isJpShop = shop === "Amazon JP" || shop === "CDJapan" || shop === "honto"
+    || shop === "楽天ブックス" || shop === "紀伊國屋書店";
+  const name = isJpShop && titleJp ? titleJp : (title || "");
+  const q = encodeURIComponent(`${name}${volume ? ` ${volume}` : ""}`.trim());
 
   const direct = DIRECT_LINK[shop];
   if (direct && isbn && title && author) {
@@ -236,8 +241,7 @@ export function shopUrl(shop, { isbn, title, volume, author, country } = {}) {
 
   const template = SHOP_LINKS[shop];
   if (template) {
-    // {isbn} lands on the exact book; {q} is the title search, which is what
-    // general retailers (Kmart, Target, Big W) actually index.
+    // {isbn} lands on the exact book; {q} is the title search.
     return template.replace("{isbn}", isbn || q).replace("{q}", q);
   }
   // No template yet — a plain search still gets the customer to the book.
