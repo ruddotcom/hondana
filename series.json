@@ -1,24 +1,83 @@
 [
-  { "id": "jjk", "title": "Jujutsu Kaisen", "publisherEn": "VIZ Media", "volumes": 30, "edition": "Standard" },
-
-  { "id": "onepiece", "title": "One Piece", "publisherEn": "VIZ Media", "volumes": 111, "edition": "Standard" },
-
-  { "id": "souleater", "title": "Soul Eater", "publisherEn": "Yen Press", "volumes": 25, "edition": "Standard" },
-  { "id": "souleater-perfect", "title": "Soul Eater: The Perfect Edition",
-    "searchTitle": "Soul Eater Perfect Edition", "publisherEn": "Square Enix Manga", "volumes": 17,
-    "edition": "Perfect Edition" },
-
-  { "id": "kagurabachi", "title": "Kagurabachi", "publisherEn": "VIZ Media", "volumes": 6, "edition": "Standard" },
-
-  { "id": "mha", "title": "My Hero Academia", "publisherEn": "VIZ Media", "volumes": 42, "edition": "Standard" },
-
-  { "id": "nana", "title": "NANA", "publisherEn": "VIZ Media", "volumes": 21, "edition": "Standard" },
-
-  { "id": "mamayuyu", "title": "MamaYuyu", "searchTitle": "MamaYuyu VIZ", "publisherEn": "VIZ Media", "volumes": 4,
-    "edition": "Japanese Import", "japanOnly": true },
-
-  { "id": "vagabond-vizbig", "title": "Vagabond (VIZBIG Edition)", "searchTitle": "Vagabond VIZBIG",
-    "publisherEn": "VIZ Media", "volumes": 12, "edition": "VIZBIG Edition" },
-  { "id": "vagabond-definitive", "title": "Vagabond (Definitive Edition)", "searchTitle": "Vagabond Definitive Edition",
-    "publisherEn": "VIZ Media", "volumes": 5, "edition": "Definitive Edition" }
+  {
+    "id": "jjk",
+    "title": "Jujutsu Kaisen",
+    "publisherEn": "VIZ Media",
+    "volumes": 30,
+    "edition": "Standard",
+    "synopsis": "Although Yuji Itadori looks like your average teenager, his immense physical strength is something to behold! Every sports club wants him to join, but Itadori would rather hang out with the school outcasts in the Occult Research Club."
+  },
+  {
+    "id": "onepiece",
+    "title": "One Piece",
+    "publisherEn": "VIZ Media",
+    "volumes": 111,
+    "edition": "Standard",
+    "synopsis": "As a child, Monkey D. Luffy was inspired to become a pirate by listening to the tales of the buccaneer \"Red-Haired\" Shanks. But his life changed when Luffy accidentally ate the Gum-Gum Devil Fruit and gained the power to stretch like rubber..."
+  },
+  {
+    "id": "souleater",
+    "title": "Soul Eater",
+    "publisherEn": "Yen Press",
+    "volumes": 25,
+    "edition": "Standard",
+    "synopsis": "Maka is a scythe meister, working to perfect one particular scythe until it is good enough to become Death's Weapon -- the weapon used by Shinigami-sama, the spirit of Death himself."
+  },
+  {
+    "id": "souleater-perfect",
+    "title": "Soul Eater: The Perfect Edition",
+    "searchTitle": "Soul Eater Perfect Edition",
+    "publisherEn": "Square Enix Manga",
+    "volumes": 17,
+    "edition": "Perfect Edition"
+  },
+  {
+    "id": "kagurabachi",
+    "title": "Kagurabachi",
+    "publisherEn": "VIZ Media",
+    "volumes": 6,
+    "edition": "Standard",
+    "synopsis": "Young Chihiro spends his days training under his famous swordsmith father. One day he hopes to become a great sword-maker himself. The goofy father and the serious son--they thought these days would last forever."
+  },
+  {
+    "id": "mha",
+    "title": "My Hero Academia",
+    "publisherEn": "VIZ Media",
+    "volumes": 42,
+    "edition": "Standard",
+    "synopsis": "Middle school student Izuku Midoriya wants to be a hero more than anything, but he hasn’t got an ounce of power in him. With no chance of ever getting into the prestigious U."
+  },
+  {
+    "id": "nana",
+    "title": "NANA",
+    "publisherEn": "VIZ Media",
+    "volumes": 21,
+    "edition": "Standard",
+    "synopsis": "Nana Komatsu is a young woman who's endured an unending string of boyfriend problems. Moving to Tokyo, she's hoping to take control of her life and put all those messy misadventures behind her."
+  },
+  {
+    "id": "mamayuyu",
+    "title": "MamaYuyu",
+    "searchTitle": "MamaYuyu VIZ",
+    "publisherEn": "VIZ Media",
+    "volumes": 4,
+    "edition": "Japanese Import",
+    "japanOnly": true
+  },
+  {
+    "id": "vagabond-vizbig",
+    "title": "Vagabond (VIZBIG Edition)",
+    "searchTitle": "Vagabond VIZBIG",
+    "publisherEn": "VIZ Media",
+    "volumes": 12,
+    "edition": "VIZBIG Edition"
+  },
+  {
+    "id": "vagabond-definitive",
+    "title": "Vagabond (Definitive Edition)",
+    "searchTitle": "Vagabond Definitive Edition",
+    "publisherEn": "VIZ Media",
+    "volumes": 5,
+    "edition": "Definitive Edition"
+  }
 ]

@@ -1,3 +1,45 @@
 {
-  "jjk:1": { "isbn13": "9781974710027" }
+  "jjk:1": {
+    "isbn13": "9781974710027"
+  },
+  "kagurabachi:1": {
+    "isbn13": "9781974747245"
+  },
+  "kagurabachi:2": {
+    "isbn13": "9781974752713"
+  },
+  "kagurabachi:3": {
+    "isbn13": "9781974754786"
+  },
+  "kagurabachi:4": {
+    "isbn13": "9781974756070"
+  },
+  "kagurabachi:5": {
+    "isbn13": "9781974758913"
+  },
+  "kagurabachi:6": {
+    "isbn13": "9781974762873"
+  },
+  "kagurabachi:7": {
+    "isbn13": "9781974765744"
+  },
+  "kagurabachi:8": {
+    "isbn13": "9781974716500"
+  },
+  "kagurabachi:9": {
+    "isbn13": "9781974768455",
+    "note": "preorder Nov 3 2026"
+  },
+  "kagurabachi:10": {
+    "isbn13": "9781974770809",
+    "note": "Kindle ISBN \u2014 replace with paperback ISBN when available, preorder Feb 2 2027"
+  },
+  "kagurabachi:11": {
+    "isbn13": "9784088851020",
+    "note": "Japanese only"
+  },
+  "kagurabachi:12": {
+    "isbn13": "9784088851778",
+    "note": "Japanese only, releases Sep 4 2026"
+  }
 }

@@ -225,10 +225,32 @@ async function googleBooksVolume(series, vol) {
     if (!matchesVolume(info.title || "", series.title, vol)) continue;
     const isbn13 = (info.industryIdentifiers || []).find((i) => i.type === "ISBN_13")?.identifier;
     if (!isbn13) continue;
+    // Skip ebook editions — we want the physical paperback ISBN for buy links
+    // and cover art. Google Books marks ebooks with isEbook or saleability,
+    // and their ISBN-13 is different from the print edition's.
+    const isEbook = item.saleInfo?.isEbook === true;
+    const isDigital = /ebook|kindle|digital|e-book/i.test(info.printType || "")
+      || /ebook|kindle|digital/i.test(info.categories?.join(" ") || "")
+      || (info.readingModes?.text === true && info.readingModes?.image === false);
+    if (isEbook || isDigital) continue;
     // zoom=2 is roughly 400px wide; the default thumbnail is ~128px and unusable.
     const thumb = (info.imageLinks?.thumbnail || "")
       .replace("http://", "https://").replace("&edge=curl", "").replace(/zoom=\d/, "zoom=2");
     return { isbn13, title: info.title, coverUrl: thumb || null, source: "google-books" };
+  }
+
+  // Second pass: if no physical edition was found, accept any edition as a
+  // fallback rather than returning nothing. A wrong-format ISBN still links
+  // to the right book on most shops, and overrides.json can fix specific cases.
+  for (const item of items) {
+    const info = item.volumeInfo || {};
+    if (!matchesVolume(info.title || "", series.title, vol)) continue;
+    const isbn13 = (info.industryIdentifiers || []).find((i) => i.type === "ISBN_13")?.identifier;
+    if (!isbn13) continue;
+    const thumb = (info.imageLinks?.thumbnail || "")
+      .replace("http://", "https://").replace("&edge=curl", "").replace(/zoom=\d/, "zoom=2");
+    console.log(`   vol ${vol}: ${isbn13} (ebook fallback — add to overrides.json if wrong)`);
+    return { isbn13, title: info.title, coverUrl: thumb || null, source: "google-books-ebook" };
   }
   return null;
 }

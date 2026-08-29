@@ -10,11 +10,11 @@
     "seriesId": "jjk",
     "volume": 2,
     "japanOnly": false,
-    "isbn13": "9781974718276",
+    "isbn13": "9781974710034",
     "title": "Jujutsu Kaisen, Vol. 2",
-    "coverUrl": "https://books.google.com/books/content?id=MZPLDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://books.google.com/books/content?id=AvroxgEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781974718276.jpg"
+    "file": "covers/9781974710034.jpg"
   },
   {
     "seriesId": "jjk",
@@ -23,7 +23,7 @@
     "isbn13": "9781974719556",
     "title": "Jujutsu Kaisen, Vol. 3",
     "coverUrl": "https://books.google.com/books/content?id=o0LZDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974719556.jpg"
   },
   {
@@ -33,18 +33,8 @@
     "isbn13": "9781974720255",
     "title": "Jujutsu Kaisen, Vol. 4",
     "coverUrl": "https://books.google.com/books/content?id=b93lDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974720255.jpg"
-  },
-  {
-    "seriesId": "jjk",
-    "volume": 5,
-    "japanOnly": false,
-    "isbn13": "9781974721979",
-    "title": "Jujutsu Kaisen, Vol. 5",
-    "coverUrl": "https://books.google.com/books/content?id=nofyDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781974721979.jpg"
   },
   {
     "seriesId": "jjk",
@@ -63,18 +53,18 @@
     "isbn13": "9781974724277",
     "title": "Jujutsu Kaisen, Vol. 7",
     "coverUrl": "https://books.google.com/books/content?id=fJcJEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974724277.jpg"
   },
   {
     "seriesId": "jjk",
     "volume": 8,
     "japanOnly": false,
-    "isbn13": "9781974725519",
+    "isbn13": "9781974718719",
     "title": "Jujutsu Kaisen, Vol. 8",
-    "coverUrl": "https://books.google.com/books/content?id=aiMWEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://books.google.com/books/content?id=SX6YzQEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781974725519.jpg"
+    "file": "covers/9781974718719.jpg"
   },
   {
     "seriesId": "jjk",
@@ -83,38 +73,38 @@
     "isbn13": "9781974726707",
     "title": "Jujutsu Kaisen, Vol. 9",
     "coverUrl": "https://books.google.com/books/content?id=rmElEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974726707.jpg"
   },
   {
     "seriesId": "jjk",
     "volume": 10,
     "japanOnly": false,
-    "isbn13": "9781974728138",
+    "isbn13": "9781974720750",
     "title": "Jujutsu Kaisen, Vol. 10",
-    "coverUrl": "https://books.google.com/books/content?id=WAEvEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://books.google.com/books/content?id=MHAEzgEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781974728138.jpg"
+    "file": "covers/9781974720750.jpg"
   },
   {
     "seriesId": "jjk",
     "volume": 11,
     "japanOnly": false,
-    "isbn13": "9781974729210",
+    "isbn13": "9781974722846",
     "title": "Jujutsu Kaisen, Vol. 11",
-    "coverUrl": "https://books.google.com/books/content?id=fic5EAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://books.google.com/books/content?id=D6EHzgEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781974729210.jpg"
+    "file": "covers/9781974722846.jpg"
   },
   {
     "seriesId": "jjk",
     "volume": 12,
     "japanOnly": false,
-    "isbn13": "9781974730384",
+    "isbn13": "9781974722853",
     "title": "Jujutsu Kaisen, Vol. 12",
-    "coverUrl": "https://books.google.com/books/content?id=Xi5EEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://books.google.com/books/content?id=kpc7zgEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781974730384.jpg"
+    "file": "covers/9781974722853.jpg"
   },
   {
     "seriesId": "jjk",
@@ -128,23 +118,33 @@
   },
   {
     "seriesId": "jjk",
+    "volume": 14,
+    "japanOnly": false,
+    "isbn13": "9781974725328",
+    "title": "Jujutsu Kaisen, Vol. 14",
+    "coverUrl": "https://books.google.com/books/content?id=SJODzgEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "source": "google-books",
+    "file": "covers/9781974725328.jpg"
+  },
+  {
+    "seriesId": "jjk",
     "volume": 15,
     "japanOnly": false,
-    "isbn13": "9781974731848",
+    "isbn13": "9781974727100",
     "title": "Jujutsu Kaisen, Vol. 15",
-    "coverUrl": "https://books.google.com/books/content?id=FfhHEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://books.google.com/books/content?id=VPcM0gEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781974731848.jpg"
+    "file": "covers/9781974727100.jpg"
   },
   {
     "seriesId": "jjk",
     "volume": 16,
     "japanOnly": false,
-    "isbn13": "9781974733101",
+    "isbn13": "9781974728985",
     "title": "Jujutsu Kaisen, Vol. 16",
-    "coverUrl": "https://books.google.com/books/content?id=EVRJEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://books.google.com/books/content?id=8Z2yzgEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781974733101.jpg"
+    "file": "covers/9781974728985.jpg"
   },
   {
     "seriesId": "jjk",
@@ -153,18 +153,18 @@
     "isbn13": "9781974733767",
     "title": "Jujutsu Kaisen, Vol. 17",
     "coverUrl": "https://books.google.com/books/content?id=cltJEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974733767.jpg"
   },
   {
     "seriesId": "jjk",
     "volume": 18,
     "japanOnly": false,
-    "isbn13": "9781974735853",
+    "isbn13": "9781974734399",
     "title": "Jujutsu Kaisen, Vol. 18",
-    "coverUrl": "https://books.google.com/books/content?id=-fdfEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781974734399-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781974735853.jpg"
+    "file": "covers/9781974734399.jpg"
   },
   {
     "seriesId": "jjk",
@@ -180,11 +180,11 @@
     "seriesId": "jjk",
     "volume": 20,
     "japanOnly": false,
-    "isbn13": "9781974740277",
+    "isbn13": "9781974738748",
     "title": "Jujutsu Kaisen, Vol. 20",
-    "coverUrl": "https://books.google.com/books/content?id=OCOVEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://books.google.com/books/content?id=aQ_e0QEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781974740277.jpg"
+    "file": "covers/9781974738748.jpg"
   },
   {
     "seriesId": "jjk",
@@ -193,7 +193,7 @@
     "isbn13": "9781974742356",
     "title": "Jujutsu Kaisen, Vol. 21",
     "coverUrl": "https://books.google.com/books/content?id=PGWsEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974742356.jpg"
   },
   {
@@ -203,7 +203,7 @@
     "isbn13": "9781974745357",
     "title": "Jujutsu Kaisen, Vol. 22",
     "coverUrl": "https://books.google.com/books/content?id=RKDFEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974745357.jpg"
   },
   {
@@ -215,16 +215,6 @@
     "coverUrl": "https://books.google.com/books/content?id=qCM70AEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
     "file": "covers/9781974746293.jpg"
-  },
-  {
-    "seriesId": "jjk",
-    "volume": 24,
-    "japanOnly": false,
-    "isbn13": "9781974751228",
-    "title": "Jujutsu Kaisen, Vol. 24",
-    "coverUrl": "https://books.google.com/books/content?id=K5z1EAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781974751228.jpg"
   },
   {
     "seriesId": "jjk",
@@ -253,7 +243,7 @@
     "isbn13": "9781974760220",
     "title": "Jujutsu Kaisen, Vol. 28",
     "coverUrl": "https://books.google.com/books/content?id=VZlFEQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974760220.jpg"
   },
   {
@@ -263,7 +253,7 @@
     "isbn13": "9781974764211",
     "title": "Jujutsu Kaisen, Vol. 29",
     "coverUrl": "https://books.google.com/books/content?id=c_KzEQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974764211.jpg"
   },
   {
@@ -273,7 +263,7 @@
     "isbn13": "9781974767090",
     "title": "Jujutsu Kaisen, Vol. 30",
     "coverUrl": "https://books.google.com/books/content?id=Y-uQEQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974767090.jpg"
   },
   {
@@ -300,21 +290,21 @@
     "seriesId": "onepiece",
     "volume": 3,
     "japanOnly": false,
-    "isbn13": "9781421546056",
+    "isbn13": "9781591161844",
     "title": "One Piece, Vol. 3",
-    "coverUrl": "https://books.google.com/books/content?id=BYzwAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781591161844-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781421546056.jpg"
+    "file": "covers/9781591161844.jpg"
   },
   {
     "seriesId": "onepiece",
     "volume": 4,
     "japanOnly": false,
-    "isbn13": "9781421546070",
-    "title": "One Piece, Vol. 4",
-    "coverUrl": "https://books.google.com/books/content?id=zYzwAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "isbn13": "9781421536286",
+    "title": "One Piece (Omnibus Edition), Vol. 4",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781421536286-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781421546070.jpg"
+    "file": "covers/9781421536286.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -355,16 +345,6 @@
     "coverUrl": "https://covers.openlibrary.org/b/isbn/9781421555010-L.jpg?default=false",
     "source": "google-books",
     "file": "covers/9781421555010.jpg"
-  },
-  {
-    "seriesId": "onepiece",
-    "volume": 9,
-    "japanOnly": false,
-    "isbn13": "9781421546155",
-    "title": "One Piece, Vol. 9",
-    "coverUrl": "https://books.google.com/books/content?id=pZvwAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781421546155.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -418,16 +398,6 @@
   },
   {
     "seriesId": "onepiece",
-    "volume": 15,
-    "japanOnly": false,
-    "isbn13": "9781421510927",
-    "title": "One Piece, Vol. 15",
-    "coverUrl": "https://books.google.com/books/content?id=_yD-zgEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781421510927.jpg"
-  },
-  {
-    "seriesId": "onepiece",
     "volume": 16,
     "japanOnly": false,
     "isbn13": "9781421583365",
@@ -445,16 +415,6 @@
     "coverUrl": "https://books.google.com/books/content?id=QabDjgEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
     "file": "covers/9781421583372.jpg"
-  },
-  {
-    "seriesId": "onepiece",
-    "volume": 18,
-    "japanOnly": false,
-    "isbn13": "9781421515120",
-    "title": "One Piece, Vol. 18",
-    "coverUrl": "https://books.google.com/books/content?id=IP8-_5G8CtkC&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": null
   },
   {
     "seriesId": "onepiece",
@@ -500,11 +460,11 @@
     "seriesId": "onepiece",
     "volume": 23,
     "japanOnly": false,
-    "isbn13": "9781421546216",
+    "isbn13": "9781421528441",
     "title": "One Piece, Vol. 23",
-    "coverUrl": "https://books.google.com/books/content?id=wafwAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781421528441-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781421546216.jpg"
+    "file": "covers/9781421528441.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -580,11 +540,11 @@
     "seriesId": "onepiece",
     "volume": 31,
     "japanOnly": false,
-    "isbn13": "9781421534473",
-    "title": "One Piece, Vol. 31",
-    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781421534473-L.jpg?default=false",
+    "isbn13": "9781974721139",
+    "title": "One Piece (Omnibus Edition), Vol. 31",
+    "coverUrl": "https://books.google.com/books/content?id=oF39zQEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781421534473.jpg"
+    "file": "covers/9781974721139.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -600,11 +560,11 @@
     "seriesId": "onepiece",
     "volume": 33,
     "japanOnly": false,
-    "isbn13": "9781421545981",
-    "title": "One Piece, Vol. 33",
-    "coverUrl": "https://books.google.com/books/content?id=kX3wAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "isbn13": "9781974741090",
+    "title": "One Piece (Omnibus Edition), Vol. 33",
+    "coverUrl": "https://books.google.com/books/content?id=ovylzwEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781421545981.jpg"
+    "file": "covers/9781974741090.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -719,11 +679,11 @@
     "seriesId": "onepiece",
     "volume": 49,
     "japanOnly": false,
-    "isbn13": "9781421545417",
+    "isbn13": "9781421534657",
     "title": "One Piece, Vol. 49",
-    "coverUrl": "https://books.google.com/books/content?id=vWXwAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781421534657-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781421545417.jpg"
+    "file": "covers/9781421534657.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -778,11 +738,11 @@
     "seriesId": "onepiece",
     "volume": 56,
     "japanOnly": false,
-    "isbn13": "9781421545318",
+    "isbn13": "9781421538501",
     "title": "One Piece, Vol. 56",
-    "coverUrl": "https://books.google.com/books/content?id=wXXwAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781421538501-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781421545318.jpg"
+    "file": "covers/9781421538501.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -791,7 +751,7 @@
     "isbn13": "9781421545295",
     "title": "One Piece, Vol. 58",
     "coverUrl": "https://books.google.com/books/content?id=dYrwAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781421545295.jpg"
   },
   {
@@ -801,7 +761,7 @@
     "isbn13": "9781421549668",
     "title": "One Piece, Vol. 59",
     "coverUrl": "https://books.google.com/books/content?id=yUTxAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781421549668.jpg"
   },
   {
@@ -818,11 +778,11 @@
     "seriesId": "onepiece",
     "volume": 61,
     "japanOnly": false,
-    "isbn13": "9781421549552",
+    "isbn13": "9781421541440",
     "title": "One Piece, Vol. 61",
-    "coverUrl": "https://books.google.com/books/content?id=kUXxAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781421541440-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781421549552.jpg"
+    "file": "covers/9781421541440.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -841,7 +801,7 @@
     "isbn13": "9781421550503",
     "title": "One Piece, Vol. 63",
     "coverUrl": "https://books.google.com/books/content?id=0X3xAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781421550503.jpg"
   },
   {
@@ -867,11 +827,11 @@
     "seriesId": "onepiece",
     "volume": 67,
     "japanOnly": false,
-    "isbn13": "9781421564876",
+    "isbn13": "9781421553719",
     "title": "One Piece, Vol. 67",
-    "coverUrl": "https://books.google.com/books/content?id=oXnzAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781421553719-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781421564876.jpg"
+    "file": "covers/9781421553719.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -890,18 +850,8 @@
     "isbn13": "9781421573557",
     "title": "One Piece, Vol. 69",
     "coverUrl": "https://books.google.com/books/content?id=ybweAgAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781421573557.jpg"
-  },
-  {
-    "seriesId": "onepiece",
-    "volume": 70,
-    "japanOnly": false,
-    "isbn13": "9781421573878",
-    "title": "One Piece, Vol. 70",
-    "coverUrl": "https://books.google.com/books/content?id=7IbiAgAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781421573878.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -910,7 +860,7 @@
     "isbn13": "9781421577340",
     "title": "One Piece, Vol. 71",
     "coverUrl": "https://books.google.com/books/content?id=uzWaAwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781421577340.jpg"
   },
   {
@@ -920,7 +870,7 @@
     "isbn13": "9781421580036",
     "title": "One Piece, Vol. 72",
     "coverUrl": "https://books.google.com/books/content?id=25lUBAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781421580036.jpg"
   },
   {
@@ -930,7 +880,7 @@
     "isbn13": "9781421581927",
     "title": "One Piece, Vol. 73",
     "coverUrl": "https://books.google.com/books/content?id=8U3sBQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781421581927.jpg"
   },
   {
@@ -986,21 +936,21 @@
     "seriesId": "onepiece",
     "volume": 79,
     "japanOnly": false,
-    "isbn13": "9781421591957",
+    "isbn13": "9781421588155",
     "title": "One Piece, Vol. 79",
-    "coverUrl": "https://books.google.com/books/content?id=-YdKDAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://books.google.com/books/content?id=stozzwEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781421591957.jpg"
+    "file": "covers/9781421588155.jpg"
   },
   {
     "seriesId": "onepiece",
     "volume": 80,
     "japanOnly": false,
-    "isbn13": "9781421593609",
+    "isbn13": "9781421590240",
     "title": "One Piece, Vol. 80",
-    "coverUrl": "https://books.google.com/books/content?id=88kmDQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781421590240-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781421593609.jpg"
+    "file": "covers/9781421590240.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -1021,6 +971,15 @@
     "coverUrl": "https://books.google.com/books/content?id=zLDm0QEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
     "file": "covers/9781421592695.jpg"
+  },
+  {
+    "seriesId": "onepiece",
+    "volume": 83,
+    "japanOnly": false,
+    "isbn13": "9781518245206",
+    "title": "One Piece 83",
+    "coverUrl": null,
+    "source": "google-books"
   },
   {
     "seriesId": "onepiece",
@@ -1046,11 +1005,11 @@
     "seriesId": "onepiece",
     "volume": 86,
     "japanOnly": false,
-    "isbn13": "9781974703289",
+    "isbn13": "9781974700424",
     "title": "One Piece, Vol. 86",
-    "coverUrl": "https://books.google.com/books/content?id=025RDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://books.google.com/books/content?id=zddbzgEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781974703289.jpg"
+    "file": "covers/9781974700424.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -1059,7 +1018,7 @@
     "isbn13": "9781974705375",
     "title": "One Piece, Vol. 87",
     "coverUrl": "https://books.google.com/books/content?id=0kliDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974705375.jpg"
   },
   {
@@ -1079,7 +1038,7 @@
     "isbn13": "9781974709779",
     "title": "One Piece, Vol. 89",
     "coverUrl": "https://books.google.com/books/content?id=leyEDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974709779.jpg"
   },
   {
@@ -1089,7 +1048,7 @@
     "isbn13": "9781974711437",
     "title": "One Piece, Vol. 90",
     "coverUrl": "https://books.google.com/books/content?id=TLeTDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974711437.jpg"
   },
   {
@@ -1119,18 +1078,18 @@
     "isbn13": "9781974721993",
     "title": "One Piece, Vol. 94",
     "coverUrl": "https://books.google.com/books/content?id=n4zyDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974721993.jpg"
   },
   {
     "seriesId": "onepiece",
     "volume": 95,
     "japanOnly": false,
-    "isbn13": "9781974724284",
+    "isbn13": "9781974718139",
     "title": "One Piece, Vol. 95",
-    "coverUrl": "https://books.google.com/books/content?id=gJcJEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781974718139-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781974724284.jpg"
+    "file": "covers/9781974718139.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -1139,7 +1098,7 @@
     "isbn13": "9781974726738",
     "title": "One Piece, Vol. 96",
     "coverUrl": "https://books.google.com/books/content?id=1mElEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974726738.jpg"
   },
   {
@@ -1186,11 +1145,21 @@
     "seriesId": "onepiece",
     "volume": 101,
     "japanOnly": false,
-    "isbn13": "9781974735792",
+    "isbn13": "9781974734207",
     "title": "One Piece, Vol. 101",
-    "coverUrl": "https://books.google.com/books/content?id=X_dfEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781974734207-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781974735792.jpg"
+    "file": "covers/9781974734207.jpg"
+  },
+  {
+    "seriesId": "onepiece",
+    "volume": 102,
+    "japanOnly": false,
+    "isbn13": "9781974736553",
+    "title": "One Piece, Vol. 102",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781974736553-L.jpg?default=false",
+    "source": "google-books",
+    "file": "covers/9781974736553.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -1199,7 +1168,7 @@
     "isbn13": "9781974739813",
     "title": "One Piece, Vol. 103",
     "coverUrl": "https://books.google.com/books/content?id=KR6VEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974739813.jpg"
   },
   {
@@ -1209,7 +1178,7 @@
     "isbn13": "9781974742196",
     "title": "One Piece, Vol. 104",
     "coverUrl": "https://books.google.com/books/content?id=KmOsEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974742196.jpg"
   },
   {
@@ -1219,7 +1188,7 @@
     "isbn13": "9781974748068",
     "title": "One Piece, Vol. 106",
     "coverUrl": "https://books.google.com/books/content?id=kY_dEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974748068.jpg"
   },
   {
@@ -1246,11 +1215,11 @@
     "seriesId": "onepiece",
     "volume": 109,
     "japanOnly": false,
-    "isbn13": "9781974757039",
+    "isbn13": "9781974755905",
     "title": "One Piece, Vol. 109",
-    "coverUrl": "https://books.google.com/books/content?id=oSgoEQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781974755905-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781974757039.jpg"
+    "file": "covers/9781974755905.jpg"
   },
   {
     "seriesId": "onepiece",
@@ -1269,7 +1238,7 @@
     "isbn13": "9781974764440",
     "title": "One Piece, Vol. 111",
     "coverUrl": "https://books.google.com/books/content?id=Jdi9EQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974764440.jpg"
   },
   {
@@ -1382,6 +1351,16 @@
   },
   {
     "seriesId": "souleater",
+    "volume": 12,
+    "japanOnly": false,
+    "isbn13": "9780316072939",
+    "title": "Soul Eater, Vol. 12",
+    "coverUrl": "https://books.google.com/books/content?id=m4Je0QEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "source": "google-books",
+    "file": "covers/9780316072939.jpg"
+  },
+  {
+    "seriesId": "souleater",
     "volume": 13,
     "japanOnly": false,
     "isbn13": "9780316230575",
@@ -1464,11 +1443,10 @@
     "seriesId": "souleater-perfect",
     "volume": 1,
     "japanOnly": false,
-    "isbn13": "9781646090013",
-    "title": "Soul Eater: The Perfect Edition 01",
-    "coverUrl": "https://books.google.com/books/content?id=_LCQEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781646090013.jpg"
+    "isbn13": "9798897224531",
+    "title": "Soul Eater the Perfect Edition Manga Set Vol. 1-9 by Atsushi Ohkubo",
+    "coverUrl": null,
+    "source": "google-books"
   },
   {
     "seriesId": "souleater-perfect",
@@ -1477,7 +1455,7 @@
     "isbn13": "9781646090020",
     "title": "Soul Eater: The Perfect Edition 02",
     "coverUrl": "https://books.google.com/books/content?id=XrGQEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781646090020.jpg"
   },
   {
@@ -1487,7 +1465,7 @@
     "isbn13": "9781646090037",
     "title": "Soul Eater: The Perfect Edition 03",
     "coverUrl": "https://books.google.com/books/content?id=PLGQEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781646090037.jpg"
   },
   {
@@ -1497,7 +1475,7 @@
     "isbn13": "9781646090044",
     "title": "Soul Eater: The Perfect Edition 04",
     "coverUrl": "https://books.google.com/books/content?id=7LCQEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781646090044.jpg"
   },
   {
@@ -1507,7 +1485,7 @@
     "isbn13": "9781646090051",
     "title": "Soul Eater: The Perfect Edition 05",
     "coverUrl": "https://books.google.com/books/content?id=5rCQEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781646090051.jpg"
   },
   {
@@ -1517,7 +1495,7 @@
     "isbn13": "9781646090068",
     "title": "Soul Eater: The Perfect Edition 06",
     "coverUrl": "https://books.google.com/books/content?id=GrGQEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781646090068.jpg"
   },
   {
@@ -1527,7 +1505,7 @@
     "isbn13": "9781646090075",
     "title": "Soul Eater: The Perfect Edition 07",
     "coverUrl": "https://books.google.com/books/content?id=FrGQEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781646090075.jpg"
   },
   {
@@ -1537,7 +1515,7 @@
     "isbn13": "9781646090082",
     "title": "Soul Eater: The Perfect Edition 08",
     "coverUrl": "https://books.google.com/books/content?id=ErGQEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781646090082.jpg"
   },
   {
@@ -1547,7 +1525,7 @@
     "isbn13": "9781646090099",
     "title": "Soul Eater: The Perfect Edition 09",
     "coverUrl": "https://books.google.com/books/content?id=_rCQEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781646090099.jpg"
   },
   {
@@ -1557,7 +1535,7 @@
     "isbn13": "9781646090105",
     "title": "Soul Eater: The Perfect Edition 10",
     "coverUrl": "https://books.google.com/books/content?id=JrGQEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781646090105.jpg"
   },
   {
@@ -1634,61 +1612,53 @@
     "seriesId": "kagurabachi",
     "volume": 1,
     "japanOnly": false,
-    "isbn13": "9781974752553",
-    "title": "Kagurabachi, Vol. 1",
-    "coverUrl": "https://books.google.com/books/content?id=8kwoEQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781974752553.jpg"
+    "isbn13": "9781974747245",
+    "source": "manual"
   },
   {
     "seriesId": "kagurabachi",
     "volume": 2,
     "japanOnly": false,
-    "isbn13": "9781974753499",
-    "title": "Kagurabachi, Vol. 2",
-    "coverUrl": "https://books.google.com/books/content?id=_JkMEQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781974753499.jpg"
+    "isbn13": "9781974752713",
+    "source": "manual"
   },
   {
     "seriesId": "kagurabachi",
     "volume": 3,
     "japanOnly": false,
-    "isbn13": "9781974756360",
-    "title": "Kagurabachi, Vol. 3",
-    "coverUrl": "https://books.google.com/books/content?id=dxooEQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781974756360.jpg"
+    "isbn13": "9781974754786",
+    "source": "manual"
   },
   {
     "seriesId": "kagurabachi",
     "volume": 4,
     "japanOnly": false,
-    "isbn13": "9781974757435",
-    "title": "Kagurabachi, Vol. 4",
-    "coverUrl": "https://books.google.com/books/content?id=OysoEQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781974757435.jpg"
+    "isbn13": "9781974756070",
+    "source": "manual"
+  },
+  {
+    "seriesId": "kagurabachi",
+    "volume": 5,
+    "japanOnly": false,
+    "isbn13": "9781974758913",
+    "source": "manual"
   },
   {
     "seriesId": "kagurabachi",
     "volume": 6,
     "japanOnly": false,
-    "isbn13": "9781974763955",
-    "title": "Kagurabachi, Vol. 6",
-    "coverUrl": "https://books.google.com/books/content?id=KLqvEQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781974763955.jpg"
+    "isbn13": "9781974762873",
+    "source": "manual"
   },
   {
     "seriesId": "mha",
     "volume": 1,
     "japanOnly": false,
-    "isbn13": "9781421585956",
+    "isbn13": "9781421582696",
     "title": "My Hero Academia, Vol. 1",
-    "coverUrl": "https://books.google.com/books/content?id=nQA-CgAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://books.google.com/books/content?id=C-QHrgEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781421585956.jpg"
+    "file": "covers/9781421582696.jpg"
   },
   {
     "seriesId": "mha",
@@ -1713,21 +1683,21 @@
     "seriesId": "mha",
     "volume": 4,
     "japanOnly": false,
-    "isbn13": "9781421590301",
+    "isbn13": "9781421585116",
     "title": "My Hero Academia, Vol. 4",
-    "coverUrl": "https://books.google.com/books/content?id=eSG_CwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781421585116-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781421590301.jpg"
+    "file": "covers/9781421585116.jpg"
   },
   {
     "seriesId": "mha",
     "volume": 5,
     "japanOnly": false,
-    "isbn13": "9781974748440",
-    "title": "My Hero Academia: Team-Up Missions, Vol. 5",
-    "coverUrl": "https://books.google.com/books/content?id=xJPdEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "isbn13": "9781974724079",
+    "title": "My Hero Academia: School Briefs, Vol. 5",
+    "coverUrl": "https://books.google.com/books/content?id=IZg4zgEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781974748440.jpg"
+    "file": "covers/9781974724079.jpg"
   },
   {
     "seriesId": "mha",
@@ -1736,7 +1706,7 @@
     "isbn13": "9781421593562",
     "title": "My Hero Academia, Vol. 6",
     "coverUrl": "https://books.google.com/books/content?id=FpgmDQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781421593562.jpg"
   },
   {
@@ -1753,21 +1723,20 @@
     "seriesId": "mha",
     "volume": 8,
     "japanOnly": false,
-    "isbn13": "9781421597423",
-    "title": "My Hero Academia, Vol. 8",
-    "coverUrl": "https://books.google.com/books/content?id=0QhLDgAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781421597423.jpg"
+    "isbn13": "9788771763133",
+    "title": "My Hero Academia - bind 8",
+    "coverUrl": null,
+    "source": "google-books"
   },
   {
     "seriesId": "mha",
     "volume": 9,
     "japanOnly": false,
-    "isbn13": "9781421598864",
-    "title": "My Hero Academia, Vol. 9",
-    "coverUrl": "https://books.google.com/books/content?id=rEYnDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "isbn13": "9781974719792",
+    "title": "My Hero Academia: Vigilantes, Vol. 9",
+    "coverUrl": "https://books.google.com/books/content?id=2zWZzQEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
     "source": "google-books",
-    "file": "covers/9781421598864.jpg"
+    "file": "covers/9781974719792.jpg"
   },
   {
     "seriesId": "mha",
@@ -1786,7 +1755,7 @@
     "isbn13": "9781974701995",
     "title": "My Hero Academia, Vol. 11",
     "coverUrl": "https://books.google.com/books/content?id=4i1EDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974701995.jpg"
   },
   {
@@ -1796,18 +1765,18 @@
     "isbn13": "9781974702800",
     "title": "My Hero Academia, Vol. 12",
     "coverUrl": "https://books.google.com/books/content?id=aBZMDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974702800.jpg"
   },
   {
     "seriesId": "mha",
-    "volume": 14,
+    "volume": 13,
     "japanOnly": false,
-    "isbn13": "9781974739332",
-    "title": "My Hero Academia: Vigilantes, Vol. 14",
-    "coverUrl": "https://books.google.com/books/content?id=7xaVEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781974739332.jpg"
+    "isbn13": "9781974704217",
+    "title": "My Hero Academia, Vol. 13",
+    "coverUrl": "https://books.google.com/books/content?id=Kq1UDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "source": "google-books-ebook",
+    "file": "covers/9781974704217.jpg"
   },
   {
     "seriesId": "mha",
@@ -1816,7 +1785,7 @@
     "isbn13": "9781974706853",
     "title": "My Hero Academia, Vol. 15",
     "coverUrl": "https://books.google.com/books/content?id=l2FuDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974706853.jpg"
   },
   {
@@ -1826,7 +1795,7 @@
     "isbn13": "9781974708529",
     "title": "My Hero Academia, Vol. 16",
     "coverUrl": "https://books.google.com/books/content?id=OCt7DwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974708529.jpg"
   },
   {
@@ -1836,7 +1805,7 @@
     "isbn13": "9781974709762",
     "title": "My Hero Academia, Vol. 17",
     "coverUrl": "https://books.google.com/books/content?id=k-yEDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974709762.jpg"
   },
   {
@@ -1846,7 +1815,7 @@
     "isbn13": "9781974710874",
     "title": "My Hero Academia, Vol. 18",
     "coverUrl": "https://books.google.com/books/content?id=mEWNDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974710874.jpg"
   },
   {
@@ -1856,7 +1825,7 @@
     "isbn13": "9781974713479",
     "title": "My Hero Academia, Vol. 20",
     "coverUrl": "https://books.google.com/books/content?id=17ikDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974713479.jpg"
   },
   {
@@ -1866,7 +1835,7 @@
     "isbn13": "9781974714094",
     "title": "My Hero Academia, Vol. 21",
     "coverUrl": "https://books.google.com/books/content?id=epatDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974714094.jpg"
   },
   {
@@ -1876,7 +1845,7 @@
     "isbn13": "9781974715725",
     "title": "My Hero Academia, Vol. 22",
     "coverUrl": "https://books.google.com/books/content?id=yQ2_DwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974715725.jpg"
   },
   {
@@ -1886,7 +1855,7 @@
     "isbn13": "9781974718283",
     "title": "My Hero Academia, Vol. 23",
     "coverUrl": "https://books.google.com/books/content?id=J5PLDwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974718283.jpg"
   },
   {
@@ -1906,18 +1875,8 @@
     "isbn13": "9781974723133",
     "title": "My Hero Academia, Vol. 25",
     "coverUrl": "https://books.google.com/books/content?id=Eoj-DwAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974723133.jpg"
-  },
-  {
-    "seriesId": "mha",
-    "volume": 26,
-    "japanOnly": false,
-    "isbn13": "9781974724765",
-    "title": "My Hero Academia, Vol. 26",
-    "coverUrl": "https://books.google.com/books/content?id=L5YQEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781974724765.jpg"
   },
   {
     "seriesId": "mha",
@@ -1936,7 +1895,7 @@
     "isbn13": "9781974728145",
     "title": "My Hero Academia, Vol. 28",
     "coverUrl": "https://books.google.com/books/content?id=EgEvEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974728145.jpg"
   },
   {
@@ -1946,28 +1905,17 @@
     "isbn13": "9781974730223",
     "title": "My Hero Academia, Vol. 29",
     "coverUrl": "https://books.google.com/books/content?id=NS0_EAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974730223.jpg"
-  },
-  {
-    "seriesId": "mha",
-    "volume": 30,
-    "japanOnly": false,
-    "isbn13": "9781974727155",
-    "title": "My Hero Academia, Vol. 30",
-    "coverUrl": "https://books.google.com/books/content?id=mTCCzgEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781974727155.jpg"
   },
   {
     "seriesId": "mha",
     "volume": 31,
     "japanOnly": false,
-    "isbn13": "9781974733279",
-    "title": "My Hero Academia, Vol. 31",
-    "coverUrl": "https://books.google.com/books/content?id=GVZJEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781974733279.jpg"
+    "isbn13": "9781518258442",
+    "title": "MY HERO ACADEMIA 31",
+    "coverUrl": null,
+    "source": "google-books"
   },
   {
     "seriesId": "mha",
@@ -1976,7 +1924,7 @@
     "isbn13": "9781974735242",
     "title": "My Hero Academia, Vol. 32",
     "coverUrl": "https://books.google.com/books/content?id=GvJfEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974735242.jpg"
   },
   {
@@ -1986,8 +1934,18 @@
     "isbn13": "9781974737666",
     "title": "My Hero Academia, Vol. 33",
     "coverUrl": "https://books.google.com/books/content?id=Cy6BEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974737666.jpg"
+  },
+  {
+    "seriesId": "mha",
+    "volume": 34,
+    "japanOnly": false,
+    "isbn13": "9781974739226",
+    "title": "My Hero Academia, Vol. 34",
+    "coverUrl": "https://books.google.com/books/content?id=fqqUEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "source": "google-books-ebook",
+    "file": "covers/9781974739226.jpg"
   },
   {
     "seriesId": "mha",
@@ -2016,8 +1974,18 @@
     "isbn13": "9781974744893",
     "title": "My Hero Academia, Vol. 37",
     "coverUrl": "https://books.google.com/books/content?id=wJrFEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974744893.jpg"
+  },
+  {
+    "seriesId": "mha",
+    "volume": 38,
+    "japanOnly": false,
+    "isbn13": "9781974747764",
+    "title": "My Hero Academia, Vol. 38",
+    "coverUrl": "https://books.google.com/books/content?id=B8_dEAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "source": "google-books-ebook",
+    "file": "covers/9781974747764.jpg"
   },
   {
     "seriesId": "mha",
@@ -2026,7 +1994,7 @@
     "isbn13": "9781974750450",
     "title": "My Hero Academia, Vol. 39",
     "coverUrl": "https://books.google.com/books/content?id=xeD0EAAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974750450.jpg"
   },
   {
@@ -2036,7 +2004,7 @@
     "isbn13": "9781974753628",
     "title": "My Hero Academia, Vol. 40",
     "coverUrl": "https://books.google.com/books/content?id=01kMEQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974753628.jpg"
   },
   {
@@ -2046,7 +2014,7 @@
     "isbn13": "9781974756704",
     "title": "My Hero Academia, Vol. 41",
     "coverUrl": "https://books.google.com/books/content?id=3yQoEQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974756704.jpg"
   },
   {
@@ -2056,7 +2024,7 @@
     "isbn13": "9781974760084",
     "title": "My Hero Academia, Vol. 42",
     "coverUrl": "https://books.google.com/books/content?id=BZdFEQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781974760084.jpg"
   },
   {
@@ -2091,23 +2059,13 @@
   },
   {
     "seriesId": "nana",
-    "volume": 4,
-    "japanOnly": false,
-    "isbn13": "9781974763528",
-    "title": "Nana 25th Anniversary Edition, Vol. 4",
-    "coverUrl": "https://books.google.com/books/content?id=Zi2m0QEACAAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781974763528.jpg"
-  },
-  {
-    "seriesId": "nana",
     "volume": 5,
     "japanOnly": false,
-    "isbn13": "9781421556390",
+    "isbn13": "9781421510194",
     "title": "Nana, Vol. 5",
-    "coverUrl": "https://books.google.com/books/content?id=mfvxAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
+    "coverUrl": "https://covers.openlibrary.org/b/isbn/9781421510194-L.jpg?default=false",
     "source": "google-books",
-    "file": "covers/9781421556390.jpg"
+    "file": "covers/9781421510194.jpg"
   },
   {
     "seriesId": "nana",
@@ -2141,11 +2099,10 @@
     "seriesId": "nana",
     "volume": 10,
     "japanOnly": false,
-    "isbn13": "9781421557335",
-    "title": "Nana, Vol. 10",
-    "coverUrl": "https://books.google.com/books/content?id=Wb3yAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
-    "file": "covers/9781421557335.jpg"
+    "isbn13": "9780329655099",
+    "title": "Nana. 10",
+    "coverUrl": null,
+    "source": "google-books"
   },
   {
     "seriesId": "nana",
@@ -2172,7 +2129,7 @@
     "isbn13": "9781421557786",
     "title": "Nana, Vol. 13",
     "coverUrl": "https://books.google.com/books/content?id=VcbyAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781421557786.jpg"
   },
   {
@@ -2182,7 +2139,7 @@
     "isbn13": "9781421557946",
     "title": "Nana, Vol. 14",
     "coverUrl": "https://books.google.com/books/content?id=tc_yAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781421557946.jpg"
   },
   {
@@ -2202,7 +2159,7 @@
     "isbn13": "9781421558240",
     "title": "Nana, Vol. 16",
     "coverUrl": "https://books.google.com/books/content?id=Xc3yAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781421558240.jpg"
   },
   {
@@ -2212,7 +2169,7 @@
     "isbn13": "9781421558363",
     "title": "Nana, Vol. 17",
     "coverUrl": "https://books.google.com/books/content?id=IdfyAQAAQBAJ&printsec=frontcover&img=1&zoom=2&source=gbs_api",
-    "source": "google-books",
+    "source": "google-books-ebook",
     "file": "covers/9781421558363.jpg"
   },
   {
